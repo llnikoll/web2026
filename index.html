@@ -1259,38 +1259,38 @@
             
             // Actualizar la interfaz de usuario
             function updateUI(isSupported, count) {
-                const badge = document.getElementById('supportBadge');
                 if (isSupported) {
-                    supportButton.classList.add('supported');
-                    supportButton.innerHTML = '<i class="fas fa-check"></i> <span>¡Apoyado!</span> <span class="support-badge">' + (count || 0) + '</span>';
-                    supportButton.disabled = true;
+                    // Ocultar el botón completamente
+                    supportButton.style.display = 'none';
+                    // Mostrar mensaje de agradecimiento
+                    supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
+                    supportMessage.style.opacity = '1';
+                    supportMessage.style.transform = 'translateY(0)';
                 }
-                if (badge) {
-                    badge.textContent = count || 0;
-                }
+                // Actualizar el contador grande
+                supportCount.textContent = count > 0 ? count : '0';
             }
             
             // Actualizar el contador de apoyos desde Firestore
             function updateSupportCount() {
+                console.log('Fetching support count from Firestore...');
                 db.collection('counters').doc('supportCount').get()
                     .then((doc) => {
                         let count = 0;
                         if (doc.exists) {
                             count = doc.data().count || 0;
-                            supportCount.textContent = count > 0 ? count : 'Muchas';
+                            console.log('Support count from Firestore:', count);
                         } else {
                             // Si el documento no existe, lo creamos con contador en 0
+                            console.log('Document does not exist, creating with count 0');
                             db.collection('counters').doc('supportCount').set({ count: 0 });
-                            supportCount.textContent = '0';
-                            updateUI(hasSupported, 0);
                         }
-                        // Actualizar el badge del botón
-                        const badge = document.getElementById('supportBadge');
-                        if (badge) badge.textContent = count > 0 ? count : 0;
+                        // Actualizar el contador visible
+                        supportCount.textContent = count > 0 ? count : '0';
                     })
                     .catch((error) => {
                         console.error('Error al obtener el contador de apoyos:', error);
-                        supportCount.textContent = 'Muchas';
+                        supportCount.textContent = '0';
                     });
             }
             
@@ -1313,12 +1313,8 @@
             
             // Inicialización
             if (hasSupported) {
-                // Obtener contador actual para mostrar en botón
-                db.collection('counters').doc('supportCount').get()
-                    .then((doc) => {
-                        const count = doc.exists ? (doc.data().count || 0) : 0;
-                        updateUI(true, count);
-                    });
+                // Si ya apoyó, ocultar el botón y mostrar contador
+                updateUI(true, 0);
             }
             updateSupportCount();
             
@@ -1335,13 +1331,12 @@
                         // Si tiene éxito, actualizamos la UI y guardamos en localStorage
                         localStorage.setItem(STORAGE_KEY, 'true');
                         updateUI(true, newCount);
-                        supportCount.textContent = newCount > 0 ? newCount : 'Muchas';
-                        supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
                     })
                     .catch(error => {
                         console.error('Error al registrar el apoyo en Firestore:', error);
                         // Si falla, mostramos un mensaje de error
                         supportMessage.textContent = 'Hubo un error al registrar tu apoyo. Por favor, inténtalo de nuevo más tarde.';
+                        supportMessage.style.opacity = '1';
                     });
             });
         });

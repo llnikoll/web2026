@@ -18,107 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Add click outside to close
                 modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeModal(modal);
-                    }
-                });
-            }
-        });
-    });
-    
-    // Close modal
-    closeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const modal = this.closest('.modal');
-            closeModal(modal);
-        });
-    });
-    
-    // Close modal function
-    function closeModal(modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            modals.forEach(modal => {
-                if (modal.style.display === 'block') {
-                    closeModal(modal);
-                }
-            });
-        }
-    });
-    
-    // Counter animation for statistics
-    function animateCounter(element, target, duration = 2000) {
-        let start = 0;
-        const increment = target / (duration / 16);
-        const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-                element.textContent = target;
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(start);
-            }
-        }, 16);
-    }
-    
-    // Animate counters when they come into view
-    function animateCountersOnScroll() {
-        const stats = document.querySelectorAll('.stat-number');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    animateCounter(entry.target, target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        stats.forEach(stat => observer.observe(stat));
-    }
-    
-    // Initialize counter animation
-    animateCountersOnScroll();
-    
-    // Smooth scrolling for navigation
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                const headerHeight = document.querySelector('.navigation').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Update active nav link
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            }
-        });
-    });
-    
-    // Update active nav link on scroll
-    function updateActiveNavOnScroll() {
-        const sections = document.querySelectorAll('.section, .hero');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const headerHeight = document.querySelector('.header').offsetHeight; // Obtener la altura del header dinámicamente
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            // Ajustar la posición de desplazamiento para tener en cuenta el header fijo
-            const scrollPosition = window.pageYOffset + headerHeight + 1; // Añadir 1px para asegurar que pase el inicio de la sección
 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -454,4 +353,4 @@ if (hamburger && navigation) {
             hamburger.setAttribute('aria-expanded', 'false');
         }
     });
-}
+// ...existing code...
