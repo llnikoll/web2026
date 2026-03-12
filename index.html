@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolás Oviedo Intendente</title>
+    <link rel="icon" type="image/png" href="niko.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="solutions.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Side Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Left Side - Download Button -->
+                <div class="header-side header-left">
+                    <div class="download-plan">
+                        <a href="capiata-gobierno.pdf" class="download-btn" download>
+                            <i class="fas fa-download"></i> Plan de Gobierno
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menú Hamburguesa -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                
+                <!-- Center - Navigation -->
+                <nav class="navigation">
+                    <ul class="nav-menu">
+                        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                        <li><a href="#diagnostico" class="nav-link">Diagnóstico</a></li>
+                        <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
+                        <li><a href="#apoyar" class="nav-link">Apoyar al Candidato</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Right Side - Logos -->
+                <div class="header-side header-right">
+                    <div class="logo-container">
+                        <img src="logo.png" alt="Logo Alianza" class="logo">
+                        <!-- Botón de descarga solo visible en mobile, entre los dos logos -->
+                        <div class="header-download-plan">
+                            <a href="capiata-gobierno.pdf" class="download-btn" download>
+                                <i class="fas fa-download"></i> Plan de Gobierno
+                            </a>
+                        </div>
+                        <img src="niko.png" alt="Logo Candidato" class="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-header">
+                <h1 class="hero-title">ING. AGRO. JOSÉ NICOLÁS OVIEDO ESPÍNOLA</h1>
+                
+            </div>
+            <div class="hero-content">
+                <div class="hero-images-container">
+                    <div class="hero-logo-container left-logo">
+                        <img src="niko.png" alt="Logo Niko" class="hero-logo">
+                    </div>
+                    <div class="hero-profile-container">
+                        <img src="perfil.png" alt="Niko - Candidato" class="hero-profile">
+                        <!-- Logo Niko debajo de la foto, solo mobile -->
+                        <img src="niko.png" alt="Logo Niko" class="niko-under-profile">
+                    </div>
+                    <!-- Botón de descarga solo visible en mobile -->
+                    <div class="hero-logo-container right-logo">
+                        <img src="logo.png" alt="Logo Alianza" class="hero-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnosis Section -->
+    <section class="section" id="diagnostico">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-stethoscope"></i> Diagnóstico de la Situación Actual</h2>
+                <p>Capiatá enfrenta graves problemas de gestión municipal que requieren soluciones inmediatas y efectivas.</p>
+            </div>
+            
+            <div class="diagnosis-card">
+                <div class="diagnosis-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <div class="diagnosis-content">
+                    <p>Nuestro análisis exhaustivo ha identificado los principales desafíos que afectan a nuestra comunidad. A continuación, presentamos un resumen de las áreas que requieren atención inmediata y las soluciones propuestas para cada una de ellas.</p>
+                </div>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card" data-modal="modal-infraestructura">
+                    <div class="card-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Infraestructura Vial Deteriorada</h3>
+                    <p>Calles en mal estado, desagües insuficientes e inundaciones recurrentes afectan la movilidad y seguridad.</p>
+                    <button class="card-btn">Ver Detalles</button>
+                </div>
+
+                <div class="card" data-modal="modal-basura">
+                    <div class="card-icon">
+                        <i class="fas fa-trash"></i>
+                    </div>
+                    <h3>Deficiencias en Recolección de Basura</h3>
+                    <p>Servicio ineficiente debido a planificación deficiente y corrupción en contratos.</p>
+                    <button class="card-btn">Ver Detalles</button>
+                </div>
+
+                <div class="card" data-modal="modal-corrupcion">
+                    <div class="card-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Corrupción y Mal Manejo</h3>
+                    <p>Contratos irregulares, desvío de fondos y falta de transparencia en la administración.</p>
+                    <button class="card-btn">Ver Detalles</button>
+                </div>
+
+                <div class="card" data-modal="modal-burocracia">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Burocracia Excesiva</h3>
+                    <p>Regulaciones innecesarias y procedimientos lentos obstaculizan la inversión y desarrollo.</p>
+                    <button class="card-btn">Ver Detalles</button>
+                </div>
+
+                <div class="card" data-modal="modal-transporte">
+                    <div class="card-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>Transporte Público Deficiente</h3>
+                    <p>Falta de cobertura en zonas vulnerables y mal estado de las unidades de transporte.</p>
+                    <button class="card-btn">Ver Detalles</button>
+                </div>
+
+                <div class="card" data-modal="modal-espacios">
+                    <div class="card-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Falta de Espacios Públicos</h3>
+                    <p>Carencia de áreas verdes y actividades culturales para la comunidad.</p>
+                    <button class="card-btn">Ver Detalles</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section" id="soluciones">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-lightbulb"></i> Soluciones Propuestas</h2>
+                <p>Propuestas concretas y efectivas para transformar Capiatá en una ciudad moderna y próspera.</p>
+            </div>
+
+            <!-- Finanzas Municipales -->
+            <div class="solution-category">
+                <button class="solution-toggle active">
+                    <i class="fas fa-money-bill-wave"></i> Finanzas Municipales
+                    <span class="toggle-icon">-</span>
+                </button>
+                <div class="solution-content" style="display: none;">
+                    <div class="solution-item">
+                        <h4>Reducción drástica del gasto público</h4>
+                        <p>• Implementar una estrategia global para reducir costos administrativos y optimizar el uso de recursos municipales.</p>
+                        <p>• Reasignar fondos hacia áreas prioritarias como infraestructura y servicios públicos esenciales.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Privatización de servicios clave</h4>
+                        <p>• Apertura a la competencia privada en recolección de basura, mantenimiento vial y transporte público.</p>
+                        <p>• Licitaciones abiertas con supervisión ciudadana para prevenir corrupción.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Eliminación de tasas y tributos innecesarios</h4>
+                        <p>• Análisis profundo de las finanzas municipales para optimizar la recaudación sin comprometer el desarrollo.</p>
+                        <p>• Reducción de impuestos a la propiedad para facilitar el pago y aumentar la recaudación total.</p>
+                        <p>• Incentivos fiscales a empresas que inviertan en infraestructura y desarrollo urbano, respetando normativas ambientales y urbanísticas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infraestructura Urbana y Transporte -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-road"></i> Infraestructura Urbana y Transporte
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Concesión de mantenimiento vial a empresas privadas</h4>
+                        <p>• Pago basado en resultados y evaluación de desempeño.</p>
+                        <p>• Penalizaciones por trabajos de mala calidad o retrasos.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Competencia en el transporte</h4>
+                        <p>• Eliminación de regulaciones que restrinjan la competencia entre empresas de transporte.</p>
+                        <p>• Modernización de flotas mediante incentivos privados y reducción de impuestos a transportistas eficientes.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Transporte público privado con itinerario libre</h4>
+                        <p>• Integración de plataformas digitales (como Uber) para gestionar el transporte público.</p>
+                        <p>• Eliminación de monopolios y fomento de tarifas dinámicas basadas en demanda y calidad.</p>
+                        <p>• Desregulación para permitir la operación de empresas o individuos que cumplan estándares básicos.</p>
+                        <p>• Alianzas con empresas de transporte intermunicipal para sistemas de trasbordo con líneas internas.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Desregulación en la construcción de viviendas y comercios</h4>
+                        <p>• Digitalización de permisos y eliminación de trámites innecesarios.</p>
+                        <p>• Reducción de impuestos y tiempos de aprobación de proyectos.</p>
+                        <p>• Planificación urbana ordenada para evitar el caos, sin añadir burocracia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revitalización de Sitios Recreativos con Presupuesto Privado -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-park"></i> Revitalización de Sitios Recreativos con Presupuesto Privado
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Transformación de plazas y parques públicos</h4>
+                        <p>• Compromiso social de comercios cercanos para mantener y mejorar estos espacios, atrayendo visitantes y aumentando sus ventas.</p>
+                        <p>• Reducción o eliminación de permisos, impuestos o patentes para comercios que inviertan en espacios recreativos.</p>
+                        <p>• Programa de “adopción” de parques por negocios locales, con letreros discretos que reconozcan su aporte.</p>
+                        <p>• Organización de actividades comunitarias (ferias, talleres, cine al aire libre) financiadas por comercios.</p>
+                        <p>• Zonas de Wi-Fi gratuito patrocinadas por empresas tecnológicas, con promoción en la página de inicio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparencia y Eliminación de la Corrupción -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-shield-alt"></i> Transparencia y Eliminación de la Corrupción
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Licitaciones competitivas y abiertas</h4>
+                        <p>Procesos transparentes, con acceso público y sin adjudicaciones preferenciales, para evitar coimas o favoritismos.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Publicación en línea de cuentas y contratos</h4>
+                        <p>Información financiera y contractual accesible en tiempo real, en formatos claros y comprensibles.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Organismo independiente de control ciudadano</h4>
+                        <p>Grupo formado por ciudadanos y expertos para supervisar actividades municipales, investigar denuncias y emitir recomendaciones vinculantes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Priorización de Obras en Zonas Vulnerables e Inundables -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-home"></i> Priorización de Obras en Zonas Vulnerables e Inundables
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Diagnóstico rápido</h4>
+                        <p>Mapeo de zonas vulnerables usando datos históricos de inundaciones y reportes ciudadanos.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Obras prioritarias</h4>
+                        <ul>
+                            <li>Mejora de sistemas de drenaje y alcantarillado con materiales duraderos.</li>
+                            <li>Pavimentación con materiales permeables para reducir escorrentías.</li>
+                            <li>Refuerzo de viviendas y caminos en zonas bajas mediante alianzas con empresas privadas.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Participación comunitaria</h4>
+                        <p>Involucrar a residentes en tareas básicas (limpieza, reforestación) con incentivos como descuentos en servicios.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Soluciones verdes</h4>
+                        <p>Implementar jardines de lluvia, zanjas de infiltración y reforestación con especies nativas.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Financiamiento mixto</h4>
+                        <p>Atraer fondos privados para complementar recursos municipales.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Mantenimiento continuo</h4>
+                        <p>Brigadas comunitarias para limpiar drenajes y canales regularmente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cultura, Turismo y Desarrollo Económico -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-umbrella-beach"></i> Cultura, Turismo y Desarrollo Económico
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Alianzas con comercios locales</h4>
+                        <p>Patrocinio de eventos culturales con publicidad para los patrocinadores.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Eventos temáticos</h4>
+                        <p>Festivales de música, gastronomía o artesanías patrocinados por negocios afines.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Uso de espacios públicos</h4>
+                        <p>Plazas y parques como sedes de eventos para reducir costos.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Incentivos para patrocinadores</h4>
+                        <p>Reducción de impuestos o permisos para empresas que inviertan en eventos.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Apoyo a artistas locales</h4>
+                        <p>Priorizar la participación de talentos locales con premios o becas.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Calendario cultural</h4>
+                        <p>Eventos mensuales o semanales publicados en un portal municipal.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Promoción compartida</h4>
+                        <p>Colaboración entre municipio y patrocinadores para difundir eventos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salud -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-heartbeat"></i>Salud
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Optimización de la infraestructura existente</h4>
+                        <ul>
+                            <li>Realizar un diagnóstico rápido de los centros de salud municipales para reparar y modernizar instalaciones (consultorios, farmacias), priorizando las zonas más vulnerables.</li>
+                            <li>Priorizar la limpieza y el mantenimiento de los centros de salud y unidades regionales, reasignando recursos humanos existentes para garantizar condiciones higiénicas óptimas.</li>
+                            <li>Solicitar de manera persistente y formal el cumplimiento de las obligaciones del Ministerio de Salud, sin delegar responsabilidades, mientras se gestionan soluciones internas.</li>
+                            <li>Recolectar datos detallados sobre deficiencias en todos los puestos de salud y unidades regionales, elaborando un plan de soluciones eficientes dentro de las atribuciones del gobierno municipal.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Transparencia y participación ciudadana</h4>
+                        <ul>
+                            <li>Publicar en línea reportes mensuales de uso, estado y aseo de los centros de salud, permitiendo a los ciudadanos fiscalizar y sugerir mejoras.</li>
+                            <li>Crear comités vecinales de salud voluntarios para coordinar campañas de prevención (vacunación, higiene) con el personal municipal, sin costo adicional.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.8 Educación -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-graduation-cap"></i> Educación
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Mejora de la infraestructura existente</h4>
+                        <ul>
+                            <li>Invertir en la reparación y equipamiento de escuelas municipales (aulas, baños, laboratorios) utilizando fondos reasignados del presupuesto, con prioridad en áreas de alta densidad poblacional.</li>
+                            <li>Reducir costos administrativos para destinar mayores recursos a materiales educativos y al mantenimiento de los edificios escolares, optimizando el uso de los fondos actuales.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Iniciativas educativas y comunitarias</h4>
+                        <ul>
+                            <li>Promover campañas de concienciación sobre el cuidado de los medios naturales, la gestión de basura, el reciclaje y mingas ambientales didácticas diseñadas para los alumnos, organizadas con el apoyo de docentes y voluntarios.</li>
+                            <li>Fomentar actividades recreativas, competencias de conocimientos y eventos deportivos en colegios y escuelas, tanto a nivel local como intercolegial, mediante la búsqueda de financiamiento privado de empresas interesadas en la educación de los niños y jóvenes como responsabilidad social y políticas de su empresa.</li>
+                            <li>Incentivar la cultura, la educación cívica, la ética y la ciudadanía, integrando estas temáticas en el currículo y actividades escolares con participación comunitaria voluntaria.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.9 Seguridad -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-user-shield"></i> Seguridad
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Eficiencia en la gestión pública</h4>
+                        <ul>
+                            <li>Establecer un trabajo conjunto con la Policía Nacional, manteniendo comunicación constante para coordinar patrullajes en sitios de mayor incidencia delictiva, optimizando los recursos municipales sin asumir responsabilidades externas.</li>
+                            <li>Fortalecer los programas de rehabilitación de adictos dentro de la ciudad, desarrollando un proyecto de vida que incluya aprendizaje de habilidades técnicas y oficios en convenios con empresas locales, promoviendo su participación como parte de su responsabilidad social; esto contribuirá a reducir los índices de marginalidad y a formar personal capacitado para mandos medios.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Transparencia y participación ciudadana</h4>
+                        <ul>
+                            <li>Publicar en línea estadísticas mensuales de incidentes delictivos, reportes de patrullaje y avances en la infraestructura de seguridad, permitiendo a los ciudadanos fiscalizar y proponer prioridades locales.</li>
+                            <li>Fomentar comités vecinales voluntarios de seguridad, coordinados con la policía municipal, para campañas de prevención del delito (como charlas sobre autodefensa y vigilancia comunitaria), organizadas sin costo adicional mediante participación ciudadana.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.10 Medio Ambiente y Gestión de Basuras -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-leaf"></i> Medio Ambiente y Gestión de Basuras
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Promoción del cuidado ambiental como prioridad</h4>
+                        <ul>
+                            <li>Establecer el cuidado del medio ambiente como pilar fundamental, fomentando la conciencia ciudadana a través de campañas educativas lideradas por comités vecinales voluntarios, sin costos adicionales para el municipio.</li>
+                            <li>Implementar un sistema de notificación formal a propietarios que realicen actividades dañinas al medio ambiente (como arrojar basura ilegalmente), ofreciendo orientación y plazos razonables (30 días) para corregir las acciones, evitando sanciones directas y promoviendo la autorregulación.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Gestión de terrenos sucios y casas abandonadas</h4>
+                        <ul>
+                            <li>Notificar a propietarios de terrenos baldíos con malezas o casas abandonadas, otorgándoles un plazo de 30 días para realizar la limpieza o regularización, con apoyo técnico gratuito del municipio para facilitar el proceso.</li>
+                            <li>En caso de no respuesta, incentivar a vecinos o asociaciones locales a adoptar estos predios mediante acuerdos voluntarios, transformándolos en áreas de recreación o ferias, con beneficios fiscales para los participantes (como reducción de tasas municipales).</li>
+                            <li>Si el propietario reclama su propiedad, podrá recuperarla sin penalidades, siempre que cubra los costos de mantenimiento asumidos por los adoptantes, promoviendo un sistema basado en acuerdos privados en lugar de multas.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Transparencia y participación comunitaria</h4>
+                        <ul>
+                            <li>Publicar en línea un registro de notificaciones y acuerdos de adopción, permitiendo a los ciudadanos supervisar y participar en la revitalización de espacios.</li>
+                            <li>Fomentar la creación de comisiones vecinales voluntarias para monitorear el estado de los predios y organizar actividades comunitarias, financiadas por donaciones privadas o esfuerzos colectivos, evitando gastos municipales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.11 Seguridad Vial -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-traffic-light"></i> Seguridad Vial
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Regularización preventiva con incautación temporal</h4>
+                        <ul>
+                            <li>Suspender la aplicación inmediata de multas por faltas graves como ausencia de casco, chaleco reflectivo, documentación incompleta o habilitaciones vencidas, otorgando a los ciudadanos un plazo de 30 días para regularizar su situación.</li>
+                            <li>Durante este período, el municipio incautará temporalmente el rodado (motos o automóviles) en depósitos municipales seguros, devolviéndolo una vez que el propietario presente la documentación o los elementos requeridos, sin costo adicional por la incautación.</li>
+                            <li>Establecer oficinas de regularización en puntos accesibles (plazas, mercados) con personal municipal para asistir a los ciudadanos en el proceso, promoviendo el cumplimiento voluntario.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Gestión de faltas simples con advertencias y multas</h4>
+                        <ul>
+                            <li>Para faltas menores como no usar casco, chaleco reflectivo, cinturón de seguridad o luces defectuosas, emitir una advertencia formal al primer incumplimiento, acompañada de información sobre cómo corregirlo.</li>
+                            <li>Registrar electrónicamente cada advertencia emitida para llevar un control individualizado.</li>
+                            <li>En caso de reincidencia, aplicar una multa proporcional, independientemente del tiempo transcurrido desde la advertencia.</li>
+                            <li>Crear un fondo específico con las multas recaudadas, gestionado por la municipalidad, que se reinvierta exclusivamente en mejoras viales, señalización y mantenimiento de rutas. Las cuentas claras de lo recaudado se reflejarán en tiempo real en la página web municipal, con reportes públicos mensuales de su uso.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Incentivos y colaboración privada</h4>
+                        <ul>
+                            <li>Ofrecer descuentos en tasas municipales a quienes regularicen su situación dentro del plazo o demuestren cumplimiento continuo, incentivando la autorregulación.</li>
+                            <li>Asociarse con talleres y empresas locales para proporcionar cascos, chalecos reflectivos y revisiones técnicas a precios reducidos, financiados por la iniciativa privada como parte de su responsabilidad social.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Infraestructura y educación vial</h4>
+                        <ul>
+                            <li>Utilizar los fondos del municipio y el fondo de multas para priorizar la instalación de señalización vial (carteles, líneas pintadas, reductores de velocidad) en zonas de alto riesgo, optimizando recursos existentes.</li>
+                            <li>Promover talleres gratuitos sobre seguridad vial, organizados con instructores voluntarios o patrocinados por empresas, dirigidos a conductores y peatones, especialmente en escuelas y comunidades vulnerables.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Controles preventivos con cámaras corporales</h4>
+                        <ul>
+                            <li>Los agentes de la Policía Municipal de Tránsito (PMT) realizarán controles preventivos equipados con cámaras corporales que grabarán sin interrupción durante toda la jornada de trabajo.</li>
+                            <li>Los agentes serán responsables de cuidar el estado de la batería y el buen funcionamiento de las cámaras, informando y documentando cualquier interrupción en la grabación mediante un reporte oficial.</li>
+                            <li>Si la grabación se interrumpe, el agente afectado deberá cesar inmediatamente su participación en los controles preventivos y documentar el incidente, dejando que solo los agentes con equipos en condiciones óptimas continúen las labores.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Control continuo de espacios de estacionamiento</h4>
+                        <ul>
+                            <li>Implementar un monitoreo continuo de los espacios de estacionamiento designados, realizado por personal municipal o comités vecinales voluntarios, para asegurar el uso adecuado de las áreas públicas.</li>
+                            <li>Emitir advertencias formales a los conductores que estacionen en lugares no permitidos (aceras, zonas peatonales, cruces), otorgándoles un plazo de 24 horas para corregir la situación, evitando multas iniciales y fomentando el cumplimiento voluntario.</li>
+                            <li>En caso de reincidencia dentro de los 7 días, aplicar una multa proporcional, cuyos ingresos se destinarán al fondo de mejoras viales, con registro transparente en la página web.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Transparencia y participación ciudadana</h4>
+                        <ul>
+                            <li>Publicar en línea estadísticas de incautaciones, regularizaciones, multas (incluyendo las de estacionamiento) y el uso del fondo de mejoras viales, con actualizaciones en tiempo real de lo recaudado, permitiendo a los ciudadanos fiscalizar y proponer prioridades.</li>
+                            <li>Formar comisiones vecinales o grupos de ciudadanos organizados para acompañar los controles preventivos de la PMT, actuando como observadores y aportando a la transparencia del proceso, sin asumir funciones ejecutivas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.12 Contrataciones de Funcionarios -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-users"></i> Contrataciones de Funcionarios
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Reducción de la sobrepoblación</h4>
+                        <ul>
+                            <li>Eliminación de empleos públicos innecesarios y reducción de costos administrativos mediante la cesación inmediata de contratos de cargos de confianza y posiciones políticas sin funciones definidas, tras una auditoría inicial.</li>
+                            <li>Realizar un diagnóstico exhaustivo del personal municipal para identificar roles redundantes o innecesarios, utilizando recursos existentes y sin costo adicional.</li>
+                            <li>Revisión exhaustiva de contratos municipales para identificar gastos fraudulentos o innecesarios, integrando los resultados en la optimización del gasto público.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Contrataciones basadas en méritos</h4>
+                        <ul>
+                            <li>Establecer que todas las nuevas contrataciones se realicen exclusivamente a través de concursos públicos de méritos, con criterios claros y transparentes (experiencia, formación, desempeño), publicados en la página web municipal.</li>
+                            <li>Garantizar que los procesos de selección sean supervisados por un comité independiente, compuesto por ciudadanos y expertos, para evitar la formación de clanes políticos o beneficios estructurales.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Neutralidad política y estabilidad</h4>
+                        <ul>
+                            <li>Prohibir a los funcionarios cualquier obligación partidaria o actividad de proselitismo, asegurando que su desempeño se centre en sus funciones específicas.</li>
+                            <li>Proteger a los empleados con funciones establecidas y que cumplan eficazmente sus tareas, sin importar su ideología política o afiliación partidaria, garantizando estabilidad laboral basada en el mérito.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Transparencia y participación ciudadana</h4>
+                        <ul>
+                            <li>Publicar en línea los resultados de las auditorías, los concursos de méritos y la lista de personal activo con sus funciones asignadas, permitiendo a los ciudadanos fiscalizar el proceso.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.13 Comisiones Vecinales -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-people-group"></i> Comisiones Vecinales
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Fomento y fortalecimiento</h4>
+                        <ul>
+                            <li>Promover la creación de nuevas comisiones vecinales en barrios sin representación, ofreciendo capacitación gratuita y apoyo logístico básico por parte de la municipalidad.</li>
+                            <li>Fortalecer las comisiones existentes mediante la asignación de recursos mínimos (espacios comunitarios, materiales de oficina) y talleres de liderazgo y gestión, financiados con fondos reasignados del presupuesto.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Rol como contralores y reportes</h4>
+                        <ul>
+                            <li>Designar a las comisiones como contralores voluntarios de las acciones municipales, permitiéndoles supervisar la ejecución de obras, el uso de fondos y el desempeño de servicios públicos, con reportes trimestrales presentados a la municipalidad.</li>
+                            <li>Facilitar un canal digital y presencial para que las comisiones reporten problemas ciudadanos (falta de iluminación, baches, basura), asegurando que cada denuncia sea registrada y priorizada en un plan de acción municipal.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Ideas específicas</h4>
+                        <ul>
+                            <li>Monitoreo de infraestructura: Crear equipos dentro de las comisiones para inspeccionar el estado de calles, desagües y espacios públicos, reportando necesidades de mantenimiento o reparación con fotos y detalles.</li>
+                            <li>Campañas de sensibilización: Organizar actividades comunitarias (limpiezas, charlas) para educar sobre reciclaje, seguridad vial y cuidado ambiental, financiadas por donaciones locales o alianzas privadas.</li>
+                            <li>Presupuesto participativo: Involucrar a las comisiones en la propuesta de proyectos menores (jardines, señalización), votados por los vecinos y ejecutados con un fondo asignado del presupuesto municipal.</li>
+                            <li>Mediación vecinal: Designar a miembros como mediadores para resolver conflictos locales (ruido, terrenos abandonados), reduciendo la carga judicial y fomentando la resolución comunitaria.</li>
+                            <li>Red de comunicación: Establecer un sistema de alertas rápidas (WhatsApp, app municipal) para reportar emergencias (inundaciones, cortes de luz), conectado directamente con las secretarías correspondientes.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Transparencia y apoyo</h4>
+                        <ul>
+                            <li>Publicar en la página web municipal los reportes de las comisiones y las respuestas oficiales, asegurando un proceso transparente y accesible.</li>
+                            <li>Proteger la autonomía de las comisiones, evitando que asuman roles ejecutivos o policiales, y limitando su función a la supervisión y propuesta.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.14 Renovación y Adaptación de la Página Web Municipal para Transparencia en Tiempo Real -->
+            <div class="solution-category">
+                <button class="solution-toggle">
+                    <i class="fas fa-globe"></i> Renovación y Adaptación de la Página Web Municipal para Transparencia en Tiempo Real
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="solution-content">
+                    <div class="solution-item">
+                        <h4>Descripción general</h4>
+                        <ul>
+                            <li>Renovar la página web municipal actual (o crear una nueva si es necesario) como plataforma central de transparencia, convirtiéndola en un portal accesible, intuitivo y actualizado en tiempo real, inspirado en modelos exitosos como el Portal Único de Transparencia de Paraguay (https://informacionpublica.paraguay.gov.py/) y el portal del Ministerio de Finanzas (https://www.mf.gov.py/portal-transparencia/), que integran datos financieros y presupuestarios descargables. El objetivo es empoderar a los ciudadanos para fiscalizar el uso de recursos públicos, alineado con la Ley 5189/2014 de Acceso a la Información Pública y Buen Gobierno, promoviendo la accountability sin aumentar costos burocráticos.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Funcionalidades clave para estado financiero y operaciones</h4>
+                        <ul>
+                            <li>Estado financiero en tiempo real: Implementar un dashboard interactivo que muestre el presupuesto municipal actualizado al minuto, incluyendo ingresos, gastos, ejecución presupuestaria (por rubro, como servicios personales vs. obras) y saldos de fondos específicos (por ejemplo, el fondo de multas viales). Los datos se alimentarán automáticamente desde el sistema contable municipal, con gráficos visuales (barras, líneas) para facilitar la comprensión, similar al Portal de Transparencia Económica del Ministerio de Finanzas.</li>
+                            <li>Operaciones del ejecutivo y legislativo: Publicar en tiempo real las actas de sesiones del Concejo Municipal, decisiones ejecutivas, licitaciones abiertas y contratos firmados, con filtros por fecha, monto o categoría. Cada operación incluirá documentos descargables (PDF) y resúmenes ejecutivos, permitiendo búsquedas avanzadas y notificaciones por suscripción (e-mail o app).</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Integración de elementos del proyecto</h4>
+                        <ul>
+                            <li>Transparencia en contrataciones y personal: Sección dedicada a concursos públicos de méritos, resultados de auditorías de personal y lista de funcionarios con funciones asignadas, actualizada automáticamente al finalizar procesos.</li>
+                            <li>Seguridad vial y fondos: Dashboard específico para el fondo de multas viales, mostrando recaudación en tiempo real, incautaciones, advertencias emitidas y reinversiones en mejoras (señalización, mantenimiento), con mapas interactivos de zonas de alto riesgo.</li>
+                            <li>Salud, educación y medio ambiente: Módulos para reportes de centros de salud (estado de instalaciones, campañas), escuelas (proyectos participativos), y medio ambiente (notificaciones de terrenos sucios, campañas de reciclaje), con formularios para que comisiones vecinales suban reportes.</li>
+                            <li>Comisiones vecinales y participación: Portal para que las comisiones suban reportes de contraloría, presupuestos participativos y alertas ciudadanas, con foro moderado para propuestas vecinales y votaciones en línea.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Acciones concretas para implementación</h4>
+                        <ul>
+                            <li>Desarrollo técnico: Contratar mediante licitación abierta un proveedor privado para el diseño y mantenimiento de la plataforma, utilizando herramientas de código abierto (como WordPress con plugins de dashboards o herramientas como Tableau Public para visualizaciones) para minimizar costos.</li>
+                            <li>Accesibilidad y seguridad: Asegurar compatibilidad móvil, idioma guaraní opcional y protección de datos (cumpliendo la Ley 6534/2020 de Protección de Datos Personales), con encriptación para reportes sensibles.</li>
+                            <li>Capacitación y lanzamiento: Realizar talleres gratuitos para funcionarios y ciudadanos sobre el uso del portal, lanzándolo en un evento público con participación de comisiones vecinales. Actualizaciones mensuales obligatorias para mantener la información en tiempo real.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Beneficios y medición</h4>
+                        <ul>
+                            <li>Fomentará la confianza ciudadana al permitir fiscalización inmediata, reduciendo corrupción y optimizando recursos, con métricas como número de visitas, solicitudes de información y reportes resueltos para evaluar impacto.</li>
+                            <li>Alineado con ideales liberales: Descentraliza el control mediante datos abiertos, empodera a la ciudadanía y reduce burocracia al automatizar procesos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Modal Infraestructura -->
+    <div id="modal-infraestructura" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-road"></i> Infraestructura Vial Deteriorada</h2>
+            <p><strong>Problema identificado:</strong> Capiatá enfrenta graves problemas de infraestructura vial que han derivado en una movilidad deficiente y riesgos para la seguridad ciudadana.</p>
+            <ul>
+                <li>Calles en mal estado que dificultan el tránsito vehicular y peatonal</li>
+                <li>Desagües pluviales insuficientes causando inundaciones recurrentes</li>
+                <li>Falta de mantenimiento preventivo generando costos mayores a largo plazo</li>
+                <li>Impacto negativo en la calidad de vida y desarrollo económico</li>
+            </ul>
+            <p><strong>Impacto:</strong> Estos problemas afectan directamente la movilidad diaria de los ciudadanos, generan accidentes de tránsito y representan un obstáculo para el desarrollo comercial e industrial de la ciudad.</p>
+        </div>
+    </div>
+
+    <!-- Modal Basura -->
+    <div id="modal-basura" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-trash"></i> Deficiencias en Recolección de Basura</h2>
+            <p><strong>Situación actual:</strong> El servicio de recolección de basura presenta graves ineficiencias que afectan la salubridad y el medio ambiente de Capiatá.</p>
+            <ul>
+                <li>Planificación deficiente en rutas y frecuencias de recolección</li>
+                <li>Monopolios poco competitivos que generan altos costos</li>
+                <li>Corrupción en contratos que beneficia a pocos en detrimento de muchos</li>
+                <li>Falta de incentivos para mejorar la calidad del servicio</li>
+            </ul>
+            <p><strong>Consecuencias:</strong> Acumulación de residuos en vías públicas, contaminación ambiental, proliferación de vectores de enfermedades y deterioro de la imagen urbana de la ciudad.</p>
+        </div>
+    </div>
+
+    <!-- Modal Corrupción -->
+    <div id="modal-corrupcion" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-exclamation-triangle"></i> Corrupción y Mal Manejo de Recursos</h2>
+            <p><strong>Análisis del presupuesto 2024:</strong> De un total de Gs. 84.918.235.813, se ejecutaron Gs. 70.619.787.544, con una distribución que revela prioridades cuestionables.</p>
+            <div class="budget-info">
+                <div class="budget-item">
+                    <strong>Servicios personales (salarios y premios):</strong>
+                    <span class="amount">Gs. 32.421.766.714 (45.89%)</span>
+                </div>
+                <div class="budget-item">
+                    <strong>Obras y desarrollo:</strong>
+                    <span class="amount">Gs. 11.779.627.346 (16.67%)</span>
+                </div>
+            </div>
+            <ul>
+                <li>Contratos irregulares que benefician a empresas específicas</li>
+                <li>Desvío de fondos hacia gastos superfluos</li>
+                <li>Falta de transparencia en procesos de licitación</li>
+                <li>Sobrepoblación de funcionarios sin mejora en servicios</li>
+            </ul>
+            <p><strong>Impacto:</strong> La corrupción drena recursos que deberían destinarse a mejorar la infraestructura y servicios públicos, perpetuando el ciclo de pobreza y desigualdad.</p>
+        </div>
+    </div>
+
+    <!-- Modal Transporte Público -->
+    <div id="modal-transporte" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-bus"></i> Deficiencias en el Transporte Público</h2>
+            <p><strong>Problema identificado:</strong> El sistema de transporte público en Capiatá presenta graves deficiencias que afectan la movilidad y calidad de vida de los ciudadanos, especialmente en las zonas más vulnerables.</p>
+            <ul>
+                <li>Falta de cobertura en barrios periféricos y zonas de menor poder adquisitivo</li>
+                <li>Unidades en mal estado de conservación, generando riesgos de seguridad</li>
+                <li>Frecuencias inadecuadas y falta de planificación de rutas integradas</li>
+                <li>Falta de accesibilidad para personas con movilidad reducida</li>
+                <li>Tarifas elevadas debido a la necesidad de múltiples trasbordos para llegar a destino</li>
+            </ul>
+            <p><strong>Impacto:</strong> Estas deficiencias generan exclusión social, dificultan el acceso a empleos y servicios esenciales, y afectan particularmente a los sectores más vulnerables de la población. La necesidad de tomar varios buses para un mismo trayecto multiplica los costos para los usuarios, convirtiendo el transporte en un gasto inaccesible para muchas familias.</p>
+        </div>
+    </div>
+
+    <!-- Modal Espacios Públicos -->
+    <div id="modal-espacios" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-tree"></i> Falta de Espacios de Esparcimiento</h2>
+            <p><strong>Problema identificado:</strong> La carencia de espacios públicos adecuados y actividades culturales limita las oportunidades de recreación y desarrollo comunitario en Capiatá.</p>
+            <ul>
+                <li>Escasez de parques y áreas verdes accesibles a toda la población</li>
+                <li>Falta de mantenimiento en los espacios existentes</li>
+                <li>Ausencia de programación cultural regular y diversa</li>
+                <li>Pocas oportunidades para el desarrollo de actividades deportivas y recreativas</li>
+                <li>Falta de espacios de encuentro comunitario</li>
+            </ul>
+            <p><strong>Impacto:</strong> Esta situación afecta la calidad de vida de los ciudadanos, limita las opciones de esparcimiento saludable y debilita el tejido social de la comunidad.</p>
+        </div>
+    </div>
+
+    <!-- Modal Burocracia -->
+    <div id="modal-burocracia" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-file-alt"></i> Burocracia Excesiva</h2>
+            <p><strong>Problema estructural:</strong> Los trámites burocráticos excesivos representan un obstáculo significativo para el desarrollo económico y la inversión en Capiatá.</p>
+            <ul>
+                <li>Regulaciones innecesarias que retrasan proyectos productivos</li>
+                <li>Procedimientos lentos que desincentivan la inversión privada</li>
+                <li>Multiplicidad de requisitos que generan costos adicionales</li>
+                <li>Falta de digitalización que complica procesos simples</li>
+            </ul>
+            <p><strong>Efectos negativos:</strong> La burocracia excesiva ahuyenta inversiones, frena la creación de empleo y mantiene a Capiatá rezagada respecto de otras ciudades con procesos más ágiles.</p>
+        </div>
+    </div>
+
+    <!-- Modal Finanzas -->
+    <div id="modal-finanzas" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-chart-pie"></i> Reducción Drástica del Gasto Público</h2>
+            <p><strong>Estrategia propuesta:</strong> Implementar una estrategia global para reducir costos administrativos y optimizar el uso de recursos municipales hacia áreas verdaderamente prioritarias.</p>
+            <ul>
+                <li>Auditoría exhaustiva de todos los gastos municipales</li>
+                <li>Eliminación de cargos innecesarios y contratos irregulares</li>
+                <li>Reasignación de fondos hacia infraestructura crítica</li>
+                <li>Medición de resultados basada en indicadores claros</li>
+            </ul>
+            <p><strong>Beneficios esperados:</strong> Mayor eficiencia en el gasto público, liberación de recursos para inversiones productivas y mejora en la calidad de servicios esenciales.</p>
+        </div>
+    </div>
+
+    <!-- Modal Privatización -->
+    <div id="modal-privatizacion" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-handshake"></i> Privatización de Servicios Clave</h2>
+            <p><strong>Enfoque liberal:</strong> Apertura a la competencia privada en servicios esenciales con mecanismos de supervisión ciudadana para garantizar calidad y transparencia.</p>
+            <ul>
+                <li>Licitaciones abiertas y competitivas</li>
+                <li>Supervisión ciudadana en procesos contractuales</li>
+                <li>Eliminación de tasas y tributos innecesarios</li>
+                <li>Incentivos fiscales para empresas eficientes</li>
+            </ul>
+            <p><strong>Ventajas:</strong> Mayor eficiencia operativa, reducción de costos para el municipio, mejora en la calidad de servicios y prevención de prácticas corruptas.</p>
+        </div>
+    </div>
+
+    <!-- Modal Concesión -->
+    <div id="modal-concesion" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-tools"></i> Concesión de Mantenimiento Vial</h2>
+            <p><strong>Sistema propuesto:</strong> Pago basado estrictamente en resultados con mecanismos claros de evaluación de desempeño y sanciones por incumplimiento.</p>
+            <ul>
+                <li>Contratos por resultados medibles</li>
+                <li>Penalizaciones por trabajos de mala calidad</li>
+                <li>Evaluación independiente del desempeño</li>
+                <li>Incentivos por cumplimiento excepcional</li>
+            </ul>
+            <p><strong>Beneficios:</strong> Infraestructura vial de calidad sostenida, reducción de costos de mantenimiento y calles transitables durante todo el año.</p>
+        </div>
+    </div>
+
+    <!-- Modal Competencia Transporte -->
+    <div id="modal-competencia-transporte" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-bus"></i> Competencia en Transporte Público</h2>
+            <p><strong>Desregulación inteligente:</strong> Eliminación de restricciones que limitan la competencia entre empresas de transporte con integración de plataformas digitales modernas.</p>
+            <ul>
+                <li>Eliminación de regulaciones restrictivas</li>
+                <li>Modernización de flotas mediante incentivos</li>
+                <li>Transporte público privado con itinerario libre</li>
+                <li>Alianzas intermunicipales para mejor conectividad</li>
+            </ul>
+            <p><strong>Resultado esperado:</strong> Sistema de transporte eficiente, accesible y adaptable a las necesidades reales de los ciudadanos.</p>
+        </div>
+    </div>
+
+    <!-- Modal Revitalización Espacios -->
+    <div id="modal-revitalizacion-espacios" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-tree"></i> Revitalización de Espacios Recreativos</h2>
+            <p><strong>Enfoque comunitario:</strong> Transformación de plazas y parques mediante el compromiso social de comercios cercanos, generando beneficios mutuos para la comunidad y el sector privado.</p>
+            <ul>
+                <li>Programa de "adopción" de parques por negocios locales</li>
+                <li>Actividades comunitarias financiadas por comercios</li>
+                <li>Zonas Wi-Fi patrocinadas por empresas tecnológicas</li>
+                <li>Reducción de permisos para inversiones en espacios públicos</li>
+            </ul>
+            <p><strong>Impacto positivo:</strong> Espacios públicos atractivos y bien mantenidos que fomentan la integración comunitaria y el desarrollo económico local.</p>
+        </div>
+    </div>
+
+    <!-- Modal Basura Ambiental -->
+    <div id="modal-basura-ambiental" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-recycle"></i> Gestión de Basuras y Medio Ambiente</h2>
+            <p><strong>Prioridad ambiental:</strong> Establecer el cuidado del medio ambiente como pilar fundamental mediante campañas educativas y mecanismos de autorregulación ciudadana.</p>
+            <ul>
+                <li>Campañas educativas lideradas por comités vecinales</li>
+                <li>Notificaciones formales en lugar de sanciones inmediatas</li>
+                <li>Incentivos para adopción de predios abandonados</li>
+                <li>Sistema basado en acuerdos privados</li>
+            </ul>
+            <p><strong>Resultado:</strong> Ciudadanía consciente y comprometida con el cuidado ambiental, reducción de contaminación y espacios públicos más limpios.</p>
+        </div>
+    </div>
+
+    <!-- Modal Licitaciones -->
+    <div id="modal-licitaciones" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-gavel"></i> Licitaciones Competitivas y Transparentes</h2>
+            <p><strong>Sistema anticorrupción:</strong> Procesos transparentes con acceso público completo y mecanismos de supervisión ciudadana para eliminar coimas y favoritismos.</p>
+            <ul>
+                <li>Procesos abiertos sin adjudicaciones preferenciales</li>
+                <li>Publicación en línea de cuentas y contratos</li>
+                <li>Organismo independiente de control ciudadano</li>
+                <li>Recomendaciones vinculantes de organismos de control</li>
+            </ul>
+            <p><strong>Beneficios:</strong> Contrataciones justas, mejores precios para el municipio y restauración de la confianza ciudadana en las instituciones.</p>
+        </div>
+    </div>
+
+    <!-- Modal Web -->
+    <div id="modal-web" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-globe"></i> Página Web Municipal para Transparencia</h2>
+            <p><strong>Plataforma digital:</strong> Portal accesible e intuitivo que proporcione información municipal en tiempo real, inspirado en modelos exitosos de transparencia gubernamental.</p>
+            <ul>
+                <li>Dashboard financiero con actualización automática</li>
+                <li>Publicación de actas, decisiones y contratos</li>
+                <li>Módulos específicos para cada área municipal</li>
+                <li>Portal para comisiones vecinales y participación ciudadana</li>
+            </ul>
+            <p><strong>Objetivo:</strong> Empoderar a los ciudadanos para fiscalizar el uso de recursos públicos y promover una gestión municipal transparente y eficiente.</p>
+        </div>
+    </div>
+
+    <!-- Modal Salud -->
+    <div id="modal-salud" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-hospital"></i> Optimización de la Infraestructura de Salud</h2>
+            <p><strong>Estrategia integral:</strong> Diagnóstico rápido de centros de salud municipales con énfasis en la transparencia y participación ciudadana activa.</p>
+            <ul>
+                <li>Diagnóstico rápido de instalaciones existentes</li>
+                <li>Priorización de zonas más vulnerables</li>
+                <li>Reportes mensuales públicos de uso y estado</li>
+                <li>Comités vecinales de salud voluntarios</li>
+            </ul>
+            <p><strong>Visión:</strong> Sistema de salud municipal transparente, eficiente y centrado en las necesidades reales de la población.</p>
+        </div>
+    </div>
+
+    <!-- Modal Educación -->
+    <div id="modal-educacion" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-graduation-cap"></i> Mejora de la Infraestructura Educativa</h2>
+            <p><strong>Inversión inteligente:</strong> Reducción de costos administrativos para destinar mayores recursos a la mejora real de la infraestructura educativa.</p>
+            <ul>
+                <li>Inversión en reparación y equipamiento de escuelas</li>
+                <li>Campañas de concienciación ambiental</li>
+                <li>Actividades recreativas y competencias intercolegiales</li>
+                <li>Integración de valores cívicos en el currículo</li>
+            </ul>
+            <p><strong>Objetivo:</strong> Entornos educativos modernos y motivadores que fomenten el desarrollo integral de niños y jóvenes.</p>
+        </div>
+    </div>
+
+    <!-- Modal Seguridad -->
+    <div id="modal-seguridad" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-user-shield"></i> Eficiencia en la Gestión de Seguridad</h2>
+            <p><strong>Enfoque coordinado:</strong> Trabajo conjunto con la Policía Nacional y desarrollo de programas de rehabilitación con participación del sector privado.</p>
+            <ul>
+                <li>Comunicación constante con Policía Nacional</li>
+                <li>Programas de rehabilitación de adictos</li>
+                <li>Estadísticas mensuales públicas de incidentes</li>
+                <li>Comités vecinales voluntarios de seguridad</li>
+            </ul>
+            <p><strong>Meta:</strong> Entornos más seguros mediante prevención, rehabilitación y participación comunitaria activa.</p>
+        </div>
+    </div>
+
+    <!-- Modal Seguridad Vial -->
+    <div id="modal-vial" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <h2><i class="fas fa-traffic-light"></i> Seguridad Vial Integral</h2>
+            <p><strong>Sistema preventivo:</strong> Regularización preventiva con educación continua y mecanismos que incentiven el cumplimiento voluntario de normas viales.</p>
+            <ul>
+                <li>Plazos de regularización sin multas inmediatas</li>
+                <li>Incautación temporal como medida educativa</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sección de Apoyo -->
+    <section id="apoyar" class="section support-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-heart"></i> Apoyar al Candidato</h2>
+                <p>Tu apoyo es fundamental para construir el Capiatá que todos merecemos</p>
+            </div>
+            <div class="support-content">
+                <div class="support-counter">
+                    <span id="supportCount">0</span>
+                    <span>personas ya apoyan esta causa</span>
+                </div>
+                <div class="support-actions">
+                    <button id="supportButton" class="support-button">
+                        <i class="fas fa-thumbs-up"></i> <span>Dar mi apoyo</span>
+                    </button>
+                    <p class="support-message" id="supportMessage"></p>
+                </div>
+                <div class="support-share">
+                    <p>¡Compartí esta causa en tus redes!</p>
+                    <div class="share-buttons">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://niko-intendente.capiata.com.py/" target="_blank" class="share-button facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=Apoyo%20a%20Niko%20Oviedo%20para%20un%20Capiatá%20mejor%20%23Capiatá2026&amp;url=https://niko-intendente.capiata.com.py/" target="_blank" class="share-button twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://wa.me/?text=Únete%20a%20la%20causa%20de%20Niko%20Oviedo%20para%20un%20Capiatá%20mejor%20https://niko-intendente.capiata.com.py/" target="_blank" class="share-button whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> niko.oviedo@gmail.com </p>
+                    <p><i class="fas fa-phone"></i> +595 993 539237</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Capiatá, Paraguay</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociales</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100013220742495" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/JoseOvi26319832" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/lllniko.oviedolll?igsh=NXk0dzczdzYwM3A5" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@niko_oviedo" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Horario</h3>
+                    <p><i class="far fa-clock"></i> Lunes a Viernes</p>
+                    <p>8:00 - 17:00 hs</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Capiatá 2026 - Por un Capiatá más libre. Todos los derechos reservados.</p>
+                <div class="visitor-counter">
+                    <i class="fas fa-users"></i>
+                    <span id="visitorCount">0</span> visitantes
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    
+    <!-- Script para el menú y modales -->
+    <script>
+        // Toggle functionality for solution sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggles = document.querySelectorAll('.solution-toggle');
+            
+            // Function to update toggle icons based on active state
+            function updateToggleIcons() {
+                document.querySelectorAll('.solution-category').forEach(category => {
+                    const toggleIcon = category.querySelector('.toggle-icon');
+                    if (category.classList.contains('active')) {
+                        toggleIcon.textContent = '−';
+                        toggleIcon.style.transform = 'rotate(0deg)';
+                        // Show the content when active
+                        const content = category.querySelector('.solution-content');
+                        if (content) content.style.display = 'block';
+                    } else {
+                        toggleIcon.textContent = '+';
+                        toggleIcon.style.transform = 'rotate(0deg)';
+                        // Hide the content when inactive
+                        const content = category.querySelector('.solution-content');
+                        if (content) content.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Handle click on toggle elements
+            function handleToggleClick(toggle) {
+                const category = toggle.parentElement;
+                const wasActive = category.classList.contains('active');
+                
+                // Close all sections first
+                document.querySelectorAll('.solution-category').forEach(cat => {
+                    cat.classList.remove('active');
+                    const content = cat.querySelector('.solution-content');
+                    if (content) content.style.display = 'none';
+                });
+                
+                // Toggle the clicked section if it wasn't active
+                if (!wasActive) {
+                    category.classList.add('active');
+                    const content = category.querySelector('.solution-content');
+                    if (content) content.style.display = 'block';
+                }
+                
+                // Update the toggle icons
+                updateToggleIcons();
+                
+                // Save the active section to localStorage
+                if (!wasActive) {
+                    const sectionId = toggle.textContent.trim();
+                    localStorage.setItem('lastActiveSolution', sectionId);
+                } else {
+                    localStorage.removeItem('lastActiveSolution');
+                }
+            }
+            
+            // Initialize toggles
+            toggles.forEach(toggle => {
+                // Set initial state
+                const category = toggle.parentElement;
+                const content = category.querySelector('.solution-content');
+                if (content) {
+                    content.style.display = category.classList.contains('active') ? 'block' : 'none';
+                }
+                
+                // Add click event to toggle sections
+                toggle.addEventListener('click', function() {
+                    handleToggleClick(this);
+                });
+                
+                // Add keyboard accessibility
+                toggle.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleToggleClick(this);
+                    }
+                });
+                
+                // Add hover effect
+                toggle.addEventListener('mouseenter', function() {
+                    if (!this.parentElement.classList.contains('active')) {
+                        this.querySelector('.toggle-icon').style.transform = 'scale(1.2)';
+                    }
+                });
+                
+                toggle.addEventListener('mouseleave', function() {
+                    if (!this.parentElement.classList.contains('active')) {
+                        this.querySelector('.toggle-icon').style.transform = 'scale(1)';
+                    }
+                });
+            });
+            
+            // Initialize first section as open by default or restore last active section
+            const lastActiveSection = localStorage.getItem('lastActiveSolution');
+            if (lastActiveSection) {
+                toggles.forEach(toggle => {
+                    if (toggle.textContent.trim() === lastActiveSection) {
+                        handleToggleClick(toggle);
+                    }
+                });
+            } else if (toggles.length > 0) {
+                // Open the first section by default if no section was previously active
+                handleToggleClick(toggles[0]);
+            }
+        });
+
+        // Configuración de Firebase - REEMPLAZAR CON TUS CREDENCIALES REALES
+        const firebaseConfig = {
+            apiKey: "AIzaSyCTK8eS5iHqW8n7d9mF2pL3kQ6jR4tY8wX",
+            authDomain: "niko-intendente-2026.firebaseapp.com",
+            projectId: "niko-intendente-2026",
+            storageBucket: "niko-intendente-2026.appspot.com",
+            messagingSenderId: "987654321098",
+            appId: "1:987654321098:web:abc123def456ghi789"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        // Funciones globales para manejar modales
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function closeModalByElement(modalElement) {
+            if (modalElement) {
+                modalElement.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Esperar a que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú hamburguesa
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Alternar menú hamburguesa
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    document.body.classList.toggle('no-scroll');
+                });
+            }
+
+            // Cerrar menú al hacer clic en un enlace
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (hamburger) hamburger.classList.remove('active');
+                    if (navMenu) navMenu.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+
+            // Cerrar menú al hacer clic fuera de él
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.navigation') && !event.target.closest('.hamburger')) {
+                    if (hamburger) hamburger.classList.remove('active');
+                    if (navMenu) navMenu.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+
+            // Evitar que el clic en el menú lo cierre
+            if (navMenu) {
+                navMenu.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                });
+            }
+
+            // Configurar manejadores para los botones de cierre de modales
+            document.addEventListener('click', function(event) {
+                // Cerrar al hacer clic en la X
+                if (event.target.classList.contains('close-modal') || event.target.classList.contains('close')) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const modal = event.target.closest('.modal');
+                    if (modal) {
+                        closeModalByElement(modal);
+                    }
+                }
+                
+                // Cerrar al hacer clic fuera del contenido del modal
+                if (event.target.classList.contains('modal')) {
+                    closeModalByElement(event.target);
+                }
+            });
+
+            // Manejador de clic para tarjetas
+            document.querySelectorAll('.card[data-modal]').forEach(card => {
+                const modalId = card.getAttribute('data-modal');
+                
+                // Hacer que toda la tarjeta sea cliqueable
+                card.style.cursor = 'pointer';
+                
+                card.addEventListener('click', function(event) {
+                    // No hacer nada si se hace clic en un botón dentro de la tarjeta
+                    if (event.target.closest('.card-btn')) {
+                        return;
+                    }
+                    openModal(modalId);
+                });
+                
+                // Configurar el botón dentro de la tarjeta
+                const button = card.querySelector('.card-btn');
+                if (button) {
+                    button.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        openModal(modalId);
+                    });
+                }
+            });
+
+        // Sistema de apoyo único por dispositivo
+        document.addEventListener('DOMContentLoaded', function() {
+            const supportButton = document.getElementById('supportButton');
+            const supportCount = document.getElementById('supportCount');
+            const supportMessage = document.getElementById('supportMessage');
+            const STORAGE_KEY = 'hasSupportedNiko2026';
+            const API_ENDPOINT = 'https://niko-intendente.capiata.com.py/'; // Reemplazar con tu endpoint real
+            
+            // Verificar si el usuario ya apoyó
+            const hasSupported = localStorage.getItem(STORAGE_KEY);
+            
+            // Actualizar la interfaz de usuario
+            function updateUI(isSupported) {
+                if (isSupported) {
+                    supportButton.classList.add('supported');
+                    supportButton.innerHTML = '<i class="fas fa-check"></i> <span>¡Gracias por tu apoyo!</span>';
+                    supportButton.disabled = true;
+                }
+            }
+            
+            // Actualizar el contador de apoyos desde Firestore
+            function updateSupportCount() {
+                db.collection('counters').doc('supportCount').get()
+                    .then((doc) => {
+                        if (doc.exists) {
+                            const count = doc.data().count || 0;
+                            supportCount.textContent = count > 0 ? count : 'Muchas';
+                        } else {
+                            // Si el documento no existe, lo creamos con contador en 0
+                            db.collection('counters').doc('supportCount').set({ count: 0 });
+                            supportCount.textContent = '0';
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error al obtener el contador de apoyos:', error);
+                        supportCount.textContent = 'Muchas';
+                    });
+            }
+            
+            // Función para enviar el apoyo al servidor usando Firestore
+            function sendSupportToServer() {
+                const counterRef = db.collection('counters').doc('supportCount');
+                
+                return db.runTransaction((transaction) => {
+                    return transaction.get(counterRef).then((doc) => {
+                        if (!doc.exists) {
+                            transaction.set(counterRef, { count: 1 });
+                            return 1;
+                        }
+                        const newCount = (doc.data().count || 0) + 1;
+                        transaction.update(counterRef, { count: newCount });
+                        return newCount;
+                    });
+                });
+            }
+            
+            // Inicialización
+            if (hasSupported) {
+                updateUI(true);
+            }
+            updateSupportCount();
+            
+            // Manejar clic en el botón de apoyo
+            supportButton.addEventListener('click', function() {
+                if (hasSupported) {
+                    supportMessage.textContent = '¡Ya has mostrado tu apoyo! Gracias por tu confianza.';
+                    return;
+                }
+                
+                // Primero intentamos registrar el apoyo en Firestore
+                sendSupportToServer()
+                    .then((newCount) => {
+                        // Si tiene éxito, actualizamos la UI y guardamos en localStorage
+                        localStorage.setItem(STORAGE_KEY, 'true');
+                        updateUI(true);
+                        supportCount.textContent = newCount > 0 ? newCount : 'Muchas';
+                        supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
+                    })
+                    .catch(error => {
+                        console.error('Error al registrar el apoyo en Firestore:', error);
+                        // Si falla, mostramos un mensaje de error
+                        supportMessage.textContent = 'Hubo un error al registrar tu apoyo. Por favor, inténtalo de nuevo más tarde.';
+                    });
+            });
+        });
+
+        // Contador de visitantes global con Firebase
+        document.addEventListener('DOMContentLoaded', function() {
+            const visitorCountElement = document.getElementById('visitorCount');
+            const VISIT_KEY = 'hasVisitedNiko2026';
+            
+            // Verificar si es primera visita del usuario
+            const hasVisited = localStorage.getItem(VISIT_KEY);
+            
+            // Referencia al contador en Firestore
+            const visitorCounterRef = db.collection('counters').doc('visitorCount');
+            
+            if (!hasVisited) {
+                // Primera visita: incrementar contador global
+                visitorCounterRef.get()
+                    .then((doc) => {
+                        const currentCount = doc.exists ? (doc.data().count || 0) : 0;
+                        const newCount = currentCount + 1;
+                        
+                        // Actualizar el contador
+                        return visitorCounterRef.set({ count: newCount });
+                    })
+                    .then(() => {
+                        // Marcar que ya visitó
+                        localStorage.setItem(VISIT_KEY, 'true');
+                        // Mostrar el contador actualizado
+                        updateVisitorDisplay();
+                    })
+                    .catch((error) => {
+                        console.error('Error al actualizar contador de visitas:', error);
+                        // Si falla Firebase, usar contador local
+                        updateLocalVisitorCount();
+                    });
+            } else {
+                // No es primera visita, solo mostrar el contador actual
+                updateVisitorDisplay();
+            }
+            
+            function updateVisitorDisplay() {
+                visitorCounterRef.get()
+                    .then((doc) => {
+                        if (doc.exists) {
+                            const count = doc.data().count || 0;
+                            if (visitorCountElement) {
+                                visitorCountElement.textContent = count.toLocaleString();
+                            }
+                        } else {
+                            // Si no existe, crear con contador inicial
+                            visitorCounterRef.set({ count: 1 });
+                            if (visitorCountElement) {
+                                visitorCountElement.textContent = '1';
+                            }
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error al obtener contador de visitas:', error);
+                        updateLocalVisitorCount();
+                    });
+            }
+            
+            function updateLocalVisitorCount() {
+                // Fallback a contador local si Firebase falla
+                let visitCount = localStorage.getItem('localVisitCount') || '1';
+                if (visitorCountElement) {
+                    visitorCountElement.textContent = parseInt(visitCount).toLocaleString();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

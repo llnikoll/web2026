@@ -1,0 +1,123 @@
+/* Solution Categories */
+.solution-category {
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(65, 84, 114, 0.1);
+}
+
+.solution-category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.solution-toggle {
+    padding: 1.5rem 2rem;
+    margin: 0;
+    font-size: 1.4rem;
+    color: #415472; /* Primary color */
+    background: rgba(3, 11, 77, 0.342);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.solution-toggle:hover {
+    background: rgba(65, 84, 114, 0.15);
+}
+
+.solution-toggle i {
+    margin-right: 10px;
+    color: #415472; /* Primary color */
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.solution-category.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.solution-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: white;
+    padding: 0 2rem;
+}
+
+.solution-category.active .solution-content {
+    max-height: 5000px; /* Adjust based on content */
+    padding: 0 2rem 2rem;
+}
+
+.solution-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(65, 84, 114, 0.1);
+}
+
+.solution-item:last-child {
+    border-bottom: none;
+}
+
+.solution-item h4 {
+    color: #31415a; /* Darker primary color */
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.solution-item p, .solution-item ul {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.solution-item ul {
+    padding-left: 1.5rem;
+}
+
+.solution-item li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.solution-item li:before {
+    content: '•';
+    color: #415472; /* Primary color */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .solution-toggle {
+        padding: 1.2rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+    .solution-content {
+        padding: 0 1.5rem;
+    }
+    
+    .solution-category.active .solution-content {
+        padding: 0 1.5rem 1.5rem;
+    }
+    
+    .solution-item {
+        padding: 1.2rem 0;
+    }
+}
