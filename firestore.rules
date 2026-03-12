@@ -2,12 +2,20 @@ rules_version='2'
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Permitir leer y escribir contadores
+    // Permitir leer y escribir contadores (apoyos y visitantes)
     match /counters/{document} {
-      allow read, write: if true;
+      allow read: if true;
+      allow write: if true;
+      allow update, delete: if true;
     }
     
-    // Denegar todo lo demás por seguridad
+    // Permitir crear y leer datos de apoyos si es necesario
+    match /supports/{document=**} {
+      allow read: if true;
+      allow create: if true;
+    }
+    
+    // Denegar acceso a todo lo demás por seguridad
     match /{document=**} {
       allow read, write: if false;
     }

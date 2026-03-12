@@ -140,3 +140,279 @@
 .support-button.supported .support-badge {
     background: var(--success-color, #10b981);
 }
+
+/* Centrar todos los modales */
+.modal {
+    padding: 20px !important;
+}
+
+.modal-content {
+    position: relative !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 600px !important;
+}
+
+/* Para tabletas y escritorio */
+@media (min-width: 600px) {
+    .modal-content {
+        width: 600px !important;
+    }
+}
+
+/* Para móviles */
+@media (max-width: 599px) {
+    .modal-content {
+        width: 95% !important;
+    }
+}
+
+/* ======================================
+   MEJORAS VISUALES - BOTONES Y EFECTOS
+   ====================================== */
+
+/* Estilos de botón mejorados */
+button, .btn, .card-btn, .support-button, .download-btn {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    position: relative;
+    overflow: hidden !important;
+}
+
+/* Efecto ripple en botones */
+button::before, .btn::before, .card-btn::before, .support-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::before, .btn:active::before, .card-btn:active::before, .support-button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Card Button mejorado */
+.card-btn {
+    background: linear-gradient(135deg, #415472 0%, #31415a 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(65, 84, 114, 0.3) !important;
+    transform: translateY(0) !important;
+}
+
+.card-btn:hover {
+    background: linear-gradient(135deg, #31415a 0%, #1f2736 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(65, 84, 114, 0.4) !important;
+}
+
+.card-btn:active {
+    transform: translateY(0) !important;
+}
+
+/* Support Button mejorado */
+.support-button {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 15px 32px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.support-button:hover:not(.supported) {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4) !important;
+}
+
+.support-button.supported {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%) !important;
+    cursor: not-allowed !important;
+}
+
+/* Download Button mejorado */
+.download-btn {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* ======================================
+   MEJORAS EN CARDS
+   ====================================== */
+
+.card {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    border: 1px solid rgba(65, 84, 114, 0.1) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 12px 30px rgba(65, 84, 114, 0.15) !important;
+    border-color: rgba(65, 84, 114, 0.2) !important;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: #415472;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    color: #10b981;
+}
+
+/* ======================================
+   MEJORAS EN TÍTULOS Y TEXTOS
+   ====================================== */
+
+h1, h2, h3 {
+    background: linear-gradient(135deg, #415472 0%, #31415a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header h2 {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+}
+
+.section-header p {
+    font-size: 1.1rem !important;
+    color: #666 !important;
+}
+
+/* ======================================
+   ANIMACIONES EN SCROLL
+   ====================================== */
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-in {
+    animation: slideInUp 0.6s ease-out forwards !important;
+}
+
+.card {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+/* ======================================
+   MEJORA EN CONTADOR DE VISITANTES
+   ====================================== */
+
+#visitorCount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+/* ======================================
+   MEJORA EN HERO SECTION
+   ====================================== */
+
+.hero {
+    min-height: 600px !important;
+}
+
+/* ======================================
+   MEJORA EN SECCIÓN DE APOYO
+   ====================================== */
+
+.support-counter {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.support-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+}
+
+/* ======================================
+   MEJORA EN FOOTER
+   ====================================== */
+
+.footer {
+    background: linear-gradient(135deg, #1f2736 0%, #415472 100%) !important;
+    color: white !important;
+}
+
+.footer-section h3 {
+    color: #10b981 !important;
+    font-weight: 700 !important;
+}
+
+.social-links a {
+    transition: all 0.3s ease !important;
+    color: white !important;
+    font-size: 1.5rem !important;
+}
+
+.social-links a:hover {
+    color: #10b981 !important;
+    transform: scale(1.2) rotate(5deg) !important;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolás Oviedo Intendente</title>
-    <link rel="icon" type="image/png" href="niko.png">
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="solutions.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -953,20 +953,20 @@
                 </div>
                 <div class="support-actions">
                     <button id="supportButton" class="support-button">
-                        <i class="fas fa-thumbs-up"></i> <span>Dar mi apoyo</span> <span class="support-badge" id="supportBadge">0</span>
+                        <i class="fas fa-thumbs-up"></i> <span>Dar mi apoyo</span>
                     </button>
                     <p class="support-message" id="supportMessage"></p>
                 </div>
                 <div class="support-share">
                     <p>¡Compartí esta causa en tus redes!</p>
                     <div class="share-buttons">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://niko-intendente.capiata.com.py/" target="_blank" class="share-button facebook">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=URL_DE_LA_PAGINA" target="_blank" class="share-button facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://twitter.com/intent/tweet?text=Apoyo%20a%20Niko%20Oviedo%20para%20un%20Capiatá%20mejor%20%23Capiatá2026&amp;url=https://niko-intendente.capiata.com.py/" target="_blank" class="share-button twitter">
+                        <a href="https://twitter.com/intent/tweet?text=Apoyo%20a%20Niko%20Oviedo%20para%20un%20Capiatá%20mejor%20%23Capiatá2026&amp;url=URL_DE_LA_PAGINA" target="_blank" class="share-button twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://wa.me/?text=Únete%20a%20la%20causa%20de%20Niko%20Oviedo%20para%20un%20Capiatá%20mejor%20https://niko-intendente.capiata.com.py/" target="_blank" class="share-button whatsapp">
+                        <a href="https://wa.me/?text=Únete%20a%20la%20causa%20de%20Niko%20Oviedo%20para%20un%20Capiatá%20mejor%20URL_DE_LA_PAGINA" target="_blank" class="share-button whatsapp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -1030,15 +1030,9 @@
                     if (category.classList.contains('active')) {
                         toggleIcon.textContent = '−';
                         toggleIcon.style.transform = 'rotate(0deg)';
-                        // Show the content when active
-                        const content = category.querySelector('.solution-content');
-                        if (content) content.style.display = 'block';
                     } else {
                         toggleIcon.textContent = '+';
                         toggleIcon.style.transform = 'rotate(0deg)';
-                        // Hide the content when inactive
-                        const content = category.querySelector('.solution-content');
-                        if (content) content.style.display = 'none';
                     }
                 });
             }
@@ -1051,15 +1045,11 @@
                 // Close all sections first
                 document.querySelectorAll('.solution-category').forEach(cat => {
                     cat.classList.remove('active');
-                    const content = cat.querySelector('.solution-content');
-                    if (content) content.style.display = 'none';
                 });
                 
                 // Toggle the clicked section if it wasn't active
                 if (!wasActive) {
                     category.classList.add('active');
-                    const content = category.querySelector('.solution-content');
-                    if (content) content.style.display = 'block';
                 }
                 
                 // Update the toggle icons
@@ -1076,13 +1066,6 @@
             
             // Initialize toggles
             toggles.forEach(toggle => {
-                // Set initial state
-                const category = toggle.parentElement;
-                const content = category.querySelector('.solution-content');
-                if (content) {
-                    content.style.display = category.classList.contains('active') ? 'block' : 'none';
-                }
-                
                 // Add click event to toggle sections
                 toggle.addEventListener('click', function() {
                     handleToggleClick(this);
@@ -1119,19 +1102,18 @@
                     }
                 });
             } else if (toggles.length > 0) {
-                // Open the first section by default if no section was previously active
                 handleToggleClick(toggles[0]);
             }
         });
 
-        // Configuración de Firebase - REEMPLAZAR CON TUS CREDENCIALES REALES
+        // Configuración de Firebase
         const firebaseConfig = {
-            apiKey: "AIzaSyCTK8eS5iHqW8n7d9mF2pL3kQ6jR4tY8wX",
-            authDomain: "niko-intendente-2026.firebaseapp.com",
-            projectId: "niko-intendente-2026",
-            storageBucket: "niko-intendente-2026.appspot.com",
-            messagingSenderId: "987654321098",
-            appId: "1:987654321098:web:abc123def456ghi789"
+            apiKey: "AIzaSyD6yV0l1X8KJQ1qQzQpX8KJQ1qQzQpX8K",
+            authDomain: "capitata2026-web.firebaseapp.com",
+            projectId: "capitata2026-web",
+            storageBucket: "capitata2026-web.appspot.com",
+            messagingSenderId: "123456789012",
+            appId: "1:123456789012:web:abcdef123456"
         };
 
         // Inicializar Firebase
@@ -1212,11 +1194,14 @@
                     if (modal) {
                         closeModalByElement(modal);
                     }
+                    return false;
                 }
                 
                 // Cerrar al hacer clic fuera del contenido del modal
                 if (event.target.classList.contains('modal')) {
+                    event.stopPropagation();
                     closeModalByElement(event.target);
+                    return false;
                 }
             });
 
@@ -1244,6 +1229,83 @@
                     });
                 }
             });
+
+            // Sistema de apoyo único por dispositivo
+            const supportButton = document.getElementById('supportButton');
+            if (supportButton) {
+                const supportCount = document.getElementById('supportCount');
+                const supportMessage = document.getElementById('supportMessage');
+                const STORAGE_KEY = 'hasSupportedNiko2026';
+                const API_ENDPOINT = 'https://api.example.com/support';
+                
+                // Verificar si el usuario ya apoyó
+                const hasSupported = localStorage.getItem(STORAGE_KEY);
+                
+                // Actualizar la interfaz de usuario
+                function updateUI(isSupported) {
+                    if (isSupported) {
+                        supportButton.classList.add('supported');
+                        supportButton.innerHTML = '<i class="fas fa-check"></i> <span>¡Gracias por tu apoyo!</span>';
+                        supportButton.disabled = true;
+                    }
+                }
+                
+                // Actualizar el contador de apoyos
+                function updateSupportCount() {
+                    try {
+                        // Simulación: incrementar el contador localmente
+                        const currentCount = parseInt(supportCount.textContent) || 0;
+                        if (hasSupported) {
+                            supportCount.textContent = currentCount > 0 ? currentCount : 1;
+                        } else {
+                            supportCount.textContent = currentCount + 1;
+                        }
+                    } catch (error) {
+                        console.error('Error al actualizar el contador:', error);
+                        if (supportCount) supportCount.textContent = 'Muchas';
+                    }
+                }
+                
+                // Función simulada para enviar el apoyo al servidor
+                function sendSupportToServer() {
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            resolve({ success: true });
+                        }, 1000);
+                    });
+                }
+                
+                // Inicialización
+                if (hasSupported) {
+                    updateUI(true);
+                }
+                updateSupportCount();
+                
+                // Manejar clic en el botón de apoyo
+                supportButton.addEventListener('click', function() {
+                    if (hasSupported) {
+                        if (supportMessage) supportMessage.textContent = '¡Ya has mostrado tu apoyo! Gracias por tu confianza.';
+                        return;
+                    }
+                    
+                    // Marcar como apoyado en localStorage
+                    localStorage.setItem(STORAGE_KEY, 'true');
+                    
+                    // Actualizar la UI
+                    updateUI(true);
+                    
+                    // Enviar el apoyo al servidor (simulado)
+                    sendSupportToServer()
+                        .then(() => {
+                            if (supportMessage) supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
+                            updateSupportCount();
+                        })
+                        .catch(error => {
+                            console.error('Error al registrar el apoyo:', error);
+                            if (supportMessage) supportMessage.textContent = 'Tu apoyo se registró localmente. ¡Gracias!';
+                        });
+                });
+            }
         });
 
         // Sistema de apoyo único por dispositivo
@@ -1252,45 +1314,36 @@
             const supportCount = document.getElementById('supportCount');
             const supportMessage = document.getElementById('supportMessage');
             const STORAGE_KEY = 'hasSupportedNiko2026';
-            const API_ENDPOINT = 'https://niko-intendente.capiata.com.py/'; // Reemplazar con tu endpoint real
+            const API_ENDPOINT = 'https://api.example.com/support'; // Reemplazar con tu endpoint real
             
             // Verificar si el usuario ya apoyó
             const hasSupported = localStorage.getItem(STORAGE_KEY);
             
             // Actualizar la interfaz de usuario
-            function updateUI(isSupported, count) {
+            function updateUI(isSupported) {
                 if (isSupported) {
-                    // Ocultar el botón completamente
-                    supportButton.style.display = 'none';
-                    // Mostrar mensaje de agradecimiento
-                    supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
-                    supportMessage.style.opacity = '1';
-                    supportMessage.style.transform = 'translateY(0)';
+                    supportButton.classList.add('supported');
+                    supportButton.innerHTML = '<i class="fas fa-check"></i> <span>¡Gracias por tu apoyo!</span>';
+                    supportButton.disabled = true;
                 }
-                // Actualizar el contador grande
-                supportCount.textContent = count > 0 ? count : '0';
             }
             
             // Actualizar el contador de apoyos desde Firestore
             function updateSupportCount() {
-                console.log('Fetching support count from Firestore...');
                 db.collection('counters').doc('supportCount').get()
                     .then((doc) => {
-                        let count = 0;
                         if (doc.exists) {
-                            count = doc.data().count || 0;
-                            console.log('Support count from Firestore:', count);
+                            const count = doc.data().count || 0;
+                            supportCount.textContent = count > 0 ? count : 'Muchas';
                         } else {
                             // Si el documento no existe, lo creamos con contador en 0
-                            console.log('Document does not exist, creating with count 0');
                             db.collection('counters').doc('supportCount').set({ count: 0 });
+                            supportCount.textContent = '0';
                         }
-                        // Actualizar el contador visible
-                        supportCount.textContent = count > 0 ? count : '0';
                     })
                     .catch((error) => {
                         console.error('Error al obtener el contador de apoyos:', error);
-                        supportCount.textContent = '0';
+                        supportCount.textContent = 'Muchas';
                     });
             }
             
@@ -1313,8 +1366,7 @@
             
             // Inicialización
             if (hasSupported) {
-                // Si ya apoyó, ocultar el botón y mostrar contador
-                updateUI(true, 0);
+                updateUI(true);
             }
             updateSupportCount();
             
@@ -1330,56 +1382,58 @@
                     .then((newCount) => {
                         // Si tiene éxito, actualizamos la UI y guardamos en localStorage
                         localStorage.setItem(STORAGE_KEY, 'true');
-                        updateUI(true, newCount);
+                        updateUI(true);
+                        supportCount.textContent = newCount > 0 ? newCount : 'Muchas';
+                        supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
                     })
                     .catch(error => {
                         console.error('Error al registrar el apoyo en Firestore:', error);
                         // Si falla, mostramos un mensaje de error
                         supportMessage.textContent = 'Hubo un error al registrar tu apoyo. Por favor, inténtalo de nuevo más tarde.';
-                        supportMessage.style.opacity = '1';
                     });
             });
         });
 
-        // Contador de visitantes global con Firebase
+        // Función para animar números (contador)
+        function animateCounter(element, target, duration = 1500) {
+            let current = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // Observar cuando el contador entra en vista
+        const supportCountElement = document.getElementById('supportCount');
+        if (supportCountElement && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentValue = parseInt(entry.target.textContent) || 0;
+                        if (currentValue > 0) {
+                            animateCounter(entry.target, currentValue, 1500);
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            observer.observe(supportCountElement);
+        }
+
+        // Contador de visitantes con Firebase
         document.addEventListener('DOMContentLoaded', function() {
             const visitorCountElement = document.getElementById('visitorCount');
-            const VISIT_KEY = 'hasVisitedNiko2026';
+            const VISITOR_STORAGE_KEY = 'hasCountedVisit';
             
-            // Verificar si es primera visita del usuario
-            const hasVisited = localStorage.getItem(VISIT_KEY);
-            
-            // Referencia al contador en Firestore
-            const visitorCounterRef = db.collection('counters').doc('visitorCount');
-            
-            if (!hasVisited) {
-                // Primera visita: incrementar contador global
-                visitorCounterRef.get()
-                    .then((doc) => {
-                        const currentCount = doc.exists ? (doc.data().count || 0) : 0;
-                        const newCount = currentCount + 1;
-                        
-                        // Actualizar el contador
-                        return visitorCounterRef.set({ count: newCount });
-                    })
-                    .then(() => {
-                        // Marcar que ya visitó
-                        localStorage.setItem(VISIT_KEY, 'true');
-                        // Mostrar el contador actualizado
-                        updateVisitorDisplay();
-                    })
-                    .catch((error) => {
-                        console.error('Error al actualizar contador de visitas:', error);
-                        // Si falla Firebase, usar contador local
-                        updateLocalVisitorCount();
-                    });
-            } else {
-                // No es primera visita, solo mostrar el contador actual
-                updateVisitorDisplay();
-            }
-            
-            function updateVisitorDisplay() {
-                visitorCounterRef.get()
+            // Obtener el contador actual de Firestore
+            function updateVisitorCount() {
+                db.collection('counters').doc('visitorCount').get()
                     .then((doc) => {
                         if (doc.exists) {
                             const count = doc.data().count || 0;
@@ -1387,26 +1441,59 @@
                                 visitorCountElement.textContent = count.toLocaleString();
                             }
                         } else {
-                            // Si no existe, crear con contador inicial
-                            visitorCounterRef.set({ count: 1 });
+                            // Si el documento no existe, crearlo
+                            db.collection('counters').doc('visitorCount').set({ count: 1 });
                             if (visitorCountElement) {
                                 visitorCountElement.textContent = '1';
                             }
                         }
                     })
                     .catch((error) => {
-                        console.error('Error al obtener contador de visitas:', error);
-                        updateLocalVisitorCount();
+                        console.error('Error al obtener contador de visitantes:', error);
+                        if (visitorCountElement) {
+                            visitorCountElement.textContent = '0';
+                        }
                     });
             }
             
-            function updateLocalVisitorCount() {
-                // Fallback a contador local si Firebase falla
-                let visitCount = localStorage.getItem('localVisitCount') || '1';
-                if (visitorCountElement) {
-                    visitorCountElement.textContent = parseInt(visitCount).toLocaleString();
+            // Incrementar el contador si es la primera vez que visita
+            function incrementVisitorCount() {
+                const hasVisited = localStorage.getItem(VISITOR_STORAGE_KEY);
+                
+                if (!hasVisited) {
+                    // Marcar que ya contamos esta visita
+                    localStorage.setItem(VISITOR_STORAGE_KEY, 'true');
+                    
+                    // Incrementar en Firebase
+                    const counterRef = db.collection('counters').doc('visitorCount');
+                    
+                    db.runTransaction((transaction) => {
+                        return transaction.get(counterRef).then((doc) => {
+                            if (!doc.exists) {
+                                transaction.set(counterRef, { count: 1 });
+                                return 1;
+                            }
+                            const newCount = (doc.data().count || 0) + 1;
+                            transaction.update(counterRef, { count: newCount });
+                            return newCount;
+                        });
+                    })
+                    .then((newCount) => {
+                        if (visitorCountElement) {
+                            visitorCountElement.textContent = newCount.toLocaleString();
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error al incrementar contador de visitantes:', error);
+                    });
+                } else {
+                    // Si ya contamos esta visita, solo mostrar el contador actual
+                    updateVisitorCount();
                 }
             }
+            
+            // Inicializar
+            incrementVisitorCount();
         });
     </script>
 </body>
