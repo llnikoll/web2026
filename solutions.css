@@ -121,3 +121,22 @@
         padding: 1.2rem 0;
     }
 }
+
+/* Support Badge Counter */
+.support-badge {
+    background: var(--primary-color, #415472);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    min-width: 24px;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.support-button.supported .support-badge {
+    background: var(--success-color, #10b981);
+}

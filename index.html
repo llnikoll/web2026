@@ -953,7 +953,7 @@
                 </div>
                 <div class="support-actions">
                     <button id="supportButton" class="support-button">
-                        <i class="fas fa-thumbs-up"></i> <span>Dar mi apoyo</span>
+                        <i class="fas fa-thumbs-up"></i> <span>Dar mi apoyo</span> <span class="support-badge" id="supportBadge">0</span>
                     </button>
                     <p class="support-message" id="supportMessage"></p>
                 </div>
@@ -1258,11 +1258,15 @@
             const hasSupported = localStorage.getItem(STORAGE_KEY);
             
             // Actualizar la interfaz de usuario
-            function updateUI(isSupported) {
+            function updateUI(isSupported, count) {
+                const badge = document.getElementById('supportBadge');
                 if (isSupported) {
                     supportButton.classList.add('supported');
-                    supportButton.innerHTML = '<i class="fas fa-check"></i> <span>¡Gracias por tu apoyo!</span>';
+                    supportButton.innerHTML = '<i class="fas fa-check"></i> <span>¡Apoyado!</span> <span class="support-badge">' + (count || 0) + '</span>';
                     supportButton.disabled = true;
+                }
+                if (badge) {
+                    badge.textContent = count || 0;
                 }
             }
             
@@ -1270,14 +1274,19 @@
             function updateSupportCount() {
                 db.collection('counters').doc('supportCount').get()
                     .then((doc) => {
+                        let count = 0;
                         if (doc.exists) {
-                            const count = doc.data().count || 0;
+                            count = doc.data().count || 0;
                             supportCount.textContent = count > 0 ? count : 'Muchas';
                         } else {
                             // Si el documento no existe, lo creamos con contador en 0
                             db.collection('counters').doc('supportCount').set({ count: 0 });
                             supportCount.textContent = '0';
+                            updateUI(hasSupported, 0);
                         }
+                        // Actualizar el badge del botón
+                        const badge = document.getElementById('supportBadge');
+                        if (badge) badge.textContent = count > 0 ? count : 0;
                     })
                     .catch((error) => {
                         console.error('Error al obtener el contador de apoyos:', error);
@@ -1304,7 +1313,12 @@
             
             // Inicialización
             if (hasSupported) {
-                updateUI(true);
+                // Obtener contador actual para mostrar en botón
+                db.collection('counters').doc('supportCount').get()
+                    .then((doc) => {
+                        const count = doc.exists ? (doc.data().count || 0) : 0;
+                        updateUI(true, count);
+                    });
             }
             updateSupportCount();
             
@@ -1320,7 +1334,7 @@
                     .then((newCount) => {
                         // Si tiene éxito, actualizamos la UI y guardamos en localStorage
                         localStorage.setItem(STORAGE_KEY, 'true');
-                        updateUI(true);
+                        updateUI(true, newCount);
                         supportCount.textContent = newCount > 0 ? newCount : 'Muchas';
                         supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
                     })
