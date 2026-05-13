@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolás Oviedo Intendente</title>
+    <title>Nicolás Oviedo Intendente - Capiatá 2026</title>
+    <meta name="description" content="Propuestas concretas para transformar Capiatá en una ciudad moderna, transparente y próspera con Nicolás Oviedo.">
+    <meta property="og:title" content="Nicolás Oviedo Intendente - Capiatá 2026">
+    <meta property="og:description" content="Propuestas concretas para transformar Capiatá en una ciudad moderna, transparente y próspera.">
+    <meta property="og:image" content="https://capiata2026.com/perfil.webp"> <!-- Asegúrate de cambiar el dominio por el real -->
+    <meta property="og:url" content="https://capiata2026.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="solutions.css">
@@ -44,14 +51,14 @@
                 <!-- Right Side - Logos -->
                 <div class="header-side header-right">
                     <div class="logo-container">
-                        <img src="logo.png" alt="Logo Alianza" class="logo">
+                        <img src="logo.webp" alt="Logo Alianza" class="logo">
                         <!-- Botón de descarga solo visible en mobile, entre los dos logos -->
                         <div class="header-download-plan">
                             <a href="capiata-gobierno.pdf" class="download-btn" download>
                                 <i class="fas fa-download"></i> Plan de Gobierno
                             </a>
                         </div>
-                        <img src="niko.png" alt="Logo Candidato" class="logo">
+                        <img src="niko.webp" alt="Logo Candidato" class="logo">
                     </div>
                 </div>
             </div>
@@ -68,16 +75,16 @@
             <div class="hero-content">
                 <div class="hero-images-container">
                     <div class="hero-logo-container left-logo">
-                        <img src="niko.png" alt="Logo Niko" class="hero-logo">
+                        <img src="niko.webp" alt="Logo Niko" class="hero-logo">
                     </div>
                     <div class="hero-profile-container">
-                        <img src="perfil.png" alt="Niko - Candidato" class="hero-profile">
+                        <img src="perfil.webp" alt="Niko - Candidato" class="hero-profile">
                         <!-- Logo Niko debajo de la foto, solo mobile -->
-                        <img src="niko.png" alt="Logo Niko" class="niko-under-profile">
+                        <img src="niko.webp" alt="Logo Niko" class="niko-under-profile">
                     </div>
                     <!-- Botón de descarga solo visible en mobile -->
                     <div class="hero-logo-container right-logo">
-                        <img src="logo.png" alt="Logo Alianza" class="hero-logo">
+                        <img src="logo.webp" alt="Logo Alianza" class="hero-logo">
                     </div>
                 </div>
             </div>
@@ -1017,484 +1024,10 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
     
-    <!-- Script para el menú y modales -->
-    <script>
-        // Toggle functionality for solution sections
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggles = document.querySelectorAll('.solution-toggle');
-            
-            // Function to update toggle icons based on active state
-            function updateToggleIcons() {
-                document.querySelectorAll('.solution-category').forEach(category => {
-                    const toggleIcon = category.querySelector('.toggle-icon');
-                    if (category.classList.contains('active')) {
-                        toggleIcon.textContent = '−';
-                        toggleIcon.style.transform = 'rotate(0deg)';
-                    } else {
-                        toggleIcon.textContent = '+';
-                        toggleIcon.style.transform = 'rotate(0deg)';
-                    }
-                });
-            }
-            
-            // Handle click on toggle elements
-            function handleToggleClick(toggle) {
-                const category = toggle.parentElement;
-                const wasActive = category.classList.contains('active');
-                
-                // Close all sections first
-                document.querySelectorAll('.solution-category').forEach(cat => {
-                    cat.classList.remove('active');
-                });
-                
-                // Toggle the clicked section if it wasn't active
-                if (!wasActive) {
-                    category.classList.add('active');
-                }
-                
-                // Update the toggle icons
-                updateToggleIcons();
-                
-                // Save the active section to localStorage
-                if (!wasActive) {
-                    const sectionId = toggle.textContent.trim();
-                    localStorage.setItem('lastActiveSolution', sectionId);
-                } else {
-                    localStorage.removeItem('lastActiveSolution');
-                }
-            }
-            
-            // Initialize toggles
-            toggles.forEach(toggle => {
-                // Add click event to toggle sections
-                toggle.addEventListener('click', function() {
-                    handleToggleClick(this);
-                });
-                
-                // Add keyboard accessibility
-                toggle.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        handleToggleClick(this);
-                    }
-                });
-                
-                // Add hover effect
-                toggle.addEventListener('mouseenter', function() {
-                    if (!this.parentElement.classList.contains('active')) {
-                        this.querySelector('.toggle-icon').style.transform = 'scale(1.2)';
-                    }
-                });
-                
-                toggle.addEventListener('mouseleave', function() {
-                    if (!this.parentElement.classList.contains('active')) {
-                        this.querySelector('.toggle-icon').style.transform = 'scale(1)';
-                    }
-                });
-            });
-            
-            // Initialize first section as open by default or restore last active section
-            const lastActiveSection = localStorage.getItem('lastActiveSolution');
-            if (lastActiveSection) {
-                toggles.forEach(toggle => {
-                    if (toggle.textContent.trim() === lastActiveSection) {
-                        handleToggleClick(toggle);
-                    }
-                });
-            } else if (toggles.length > 0) {
-                handleToggleClick(toggles[0]);
-            }
-        });
-
-        // Configuración de Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyD6yV0l1X8KJQ1qQzQpX8KJQ1qQzQpX8K",
-            authDomain: "capitata2026-web.firebaseapp.com",
-            projectId: "capitata2026-web",
-            storageBucket: "capitata2026-web.appspot.com",
-            messagingSenderId: "123456789012",
-            appId: "1:123456789012:web:abcdef123456"
-        };
-
-        // Inicializar Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-        // Funciones globales para manejar modales
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        function closeModalByElement(modalElement) {
-            if (modalElement) {
-                modalElement.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Esperar a que el DOM esté completamente cargado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Menú hamburguesa
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            // Alternar menú hamburguesa
-            if (hamburger) {
-                hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                    document.body.classList.toggle('no-scroll');
-                });
-            }
-
-            // Cerrar menú al hacer clic en un enlace
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (hamburger) hamburger.classList.remove('active');
-                    if (navMenu) navMenu.classList.remove('active');
-                    document.body.classList.remove('no-scroll');
-                });
-            });
-
-            // Cerrar menú al hacer clic fuera de él
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.navigation') && !event.target.closest('.hamburger')) {
-                    if (hamburger) hamburger.classList.remove('active');
-                    if (navMenu) navMenu.classList.remove('active');
-                    document.body.classList.remove('no-scroll');
-                }
-            });
-
-            // Evitar que el clic en el menú lo cierre
-            if (navMenu) {
-                navMenu.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                });
-            }
-
-            // Configurar manejadores para los botones de cierre de modales
-            document.addEventListener('click', function(event) {
-                // Cerrar al hacer clic en la X
-                if (event.target.classList.contains('close-modal') || event.target.classList.contains('close')) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    const modal = event.target.closest('.modal');
-                    if (modal) {
-                        closeModalByElement(modal);
-                    }
-                    return false;
-                }
-                
-                // Cerrar al hacer clic fuera del contenido del modal
-                if (event.target.classList.contains('modal')) {
-                    event.stopPropagation();
-                    closeModalByElement(event.target);
-                    return false;
-                }
-            });
-
-            // Manejador de clic para tarjetas
-            document.querySelectorAll('.card[data-modal]').forEach(card => {
-                const modalId = card.getAttribute('data-modal');
-                
-                // Hacer que toda la tarjeta sea cliqueable
-                card.style.cursor = 'pointer';
-                
-                card.addEventListener('click', function(event) {
-                    // No hacer nada si se hace clic en un botón dentro de la tarjeta
-                    if (event.target.closest('.card-btn')) {
-                        return;
-                    }
-                    openModal(modalId);
-                });
-                
-                // Configurar el botón dentro de la tarjeta
-                const button = card.querySelector('.card-btn');
-                if (button) {
-                    button.addEventListener('click', function(event) {
-                        event.stopPropagation();
-                        openModal(modalId);
-                    });
-                }
-            });
-
-            // Sistema de apoyo único por dispositivo
-            const supportButton = document.getElementById('supportButton');
-            if (supportButton) {
-                const supportCount = document.getElementById('supportCount');
-                const supportMessage = document.getElementById('supportMessage');
-                const STORAGE_KEY = 'hasSupportedNiko2026';
-                const API_ENDPOINT = 'https://api.example.com/support';
-                
-                // Verificar si el usuario ya apoyó
-                const hasSupported = localStorage.getItem(STORAGE_KEY);
-                
-                // Actualizar la interfaz de usuario
-                function updateUI(isSupported) {
-                    if (isSupported) {
-                        supportButton.classList.add('supported');
-                        supportButton.innerHTML = '<i class="fas fa-check"></i> <span>¡Gracias por tu apoyo!</span>';
-                        supportButton.disabled = true;
-                    }
-                }
-                
-                // Actualizar el contador de apoyos
-                function updateSupportCount() {
-                    try {
-                        // Simulación: incrementar el contador localmente
-                        const currentCount = parseInt(supportCount.textContent) || 0;
-                        if (hasSupported) {
-                            supportCount.textContent = currentCount > 0 ? currentCount : 1;
-                        } else {
-                            supportCount.textContent = currentCount + 1;
-                        }
-                    } catch (error) {
-                        console.error('Error al actualizar el contador:', error);
-                        if (supportCount) supportCount.textContent = 'Muchas';
-                    }
-                }
-                
-                // Función simulada para enviar el apoyo al servidor
-                function sendSupportToServer() {
-                    return new Promise((resolve) => {
-                        setTimeout(() => {
-                            resolve({ success: true });
-                        }, 1000);
-                    });
-                }
-                
-                // Inicialización
-                if (hasSupported) {
-                    updateUI(true);
-                }
-                updateSupportCount();
-                
-                // Manejar clic en el botón de apoyo
-                supportButton.addEventListener('click', function() {
-                    if (hasSupported) {
-                        if (supportMessage) supportMessage.textContent = '¡Ya has mostrado tu apoyo! Gracias por tu confianza.';
-                        return;
-                    }
-                    
-                    // Marcar como apoyado en localStorage
-                    localStorage.setItem(STORAGE_KEY, 'true');
-                    
-                    // Actualizar la UI
-                    updateUI(true);
-                    
-                    // Enviar el apoyo al servidor (simulado)
-                    sendSupportToServer()
-                        .then(() => {
-                            if (supportMessage) supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
-                            updateSupportCount();
-                        })
-                        .catch(error => {
-                            console.error('Error al registrar el apoyo:', error);
-                            if (supportMessage) supportMessage.textContent = 'Tu apoyo se registró localmente. ¡Gracias!';
-                        });
-                });
-            }
-        });
-
-        // Sistema de apoyo único por dispositivo
-        document.addEventListener('DOMContentLoaded', function() {
-            const supportButton = document.getElementById('supportButton');
-            const supportCount = document.getElementById('supportCount');
-            const supportMessage = document.getElementById('supportMessage');
-            const STORAGE_KEY = 'hasSupportedNiko2026';
-            const API_ENDPOINT = 'https://api.example.com/support'; // Reemplazar con tu endpoint real
-            
-            // Verificar si el usuario ya apoyó
-            const hasSupported = localStorage.getItem(STORAGE_KEY);
-            
-            // Actualizar la interfaz de usuario
-            function updateUI(isSupported) {
-                if (isSupported) {
-                    supportButton.classList.add('supported');
-                    supportButton.innerHTML = '<i class="fas fa-check"></i> <span>¡Gracias por tu apoyo!</span>';
-                    supportButton.disabled = true;
-                }
-            }
-            
-            // Actualizar el contador de apoyos desde Firestore
-            function updateSupportCount() {
-                db.collection('counters').doc('supportCount').get()
-                    .then((doc) => {
-                        if (doc.exists) {
-                            const count = doc.data().count || 0;
-                            supportCount.textContent = count > 0 ? count : 'Muchas';
-                        } else {
-                            // Si el documento no existe, lo creamos con contador en 0
-                            db.collection('counters').doc('supportCount').set({ count: 0 });
-                            supportCount.textContent = '0';
-                        }
-                    })
-                    .catch((error) => {
-                        console.error('Error al obtener el contador de apoyos:', error);
-                        supportCount.textContent = 'Muchas';
-                    });
-            }
-            
-            // Función para enviar el apoyo al servidor usando Firestore
-            function sendSupportToServer() {
-                const counterRef = db.collection('counters').doc('supportCount');
-                
-                return db.runTransaction((transaction) => {
-                    return transaction.get(counterRef).then((doc) => {
-                        if (!doc.exists) {
-                            transaction.set(counterRef, { count: 1 });
-                            return 1;
-                        }
-                        const newCount = (doc.data().count || 0) + 1;
-                        transaction.update(counterRef, { count: newCount });
-                        return newCount;
-                    });
-                });
-            }
-            
-            // Inicialización
-            if (hasSupported) {
-                updateUI(true);
-            }
-            updateSupportCount();
-            
-            // Manejar clic en el botón de apoyo
-            supportButton.addEventListener('click', function() {
-                if (hasSupported) {
-                    supportMessage.textContent = '¡Ya has mostrado tu apoyo! Gracias por tu confianza.';
-                    return;
-                }
-                
-                // Primero intentamos registrar el apoyo en Firestore
-                sendSupportToServer()
-                    .then((newCount) => {
-                        // Si tiene éxito, actualizamos la UI y guardamos en localStorage
-                        localStorage.setItem(STORAGE_KEY, 'true');
-                        updateUI(true);
-                        supportCount.textContent = newCount > 0 ? newCount : 'Muchas';
-                        supportMessage.textContent = '¡Gracias por tu apoyo! Juntos construiremos un Capiatá mejor.';
-                    })
-                    .catch(error => {
-                        console.error('Error al registrar el apoyo en Firestore:', error);
-                        // Si falla, mostramos un mensaje de error
-                        supportMessage.textContent = 'Hubo un error al registrar tu apoyo. Por favor, inténtalo de nuevo más tarde.';
-                    });
-            });
-        });
-
-        // Función para animar números (contador)
-        function animateCounter(element, target, duration = 1500) {
-            let current = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, 16);
-        }
-
-        // Observar cuando el contador entra en vista
-        const supportCountElement = document.getElementById('supportCount');
-        if (supportCountElement && 'IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const currentValue = parseInt(entry.target.textContent) || 0;
-                        if (currentValue > 0) {
-                            animateCounter(entry.target, currentValue, 1500);
-                        }
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            observer.observe(supportCountElement);
-        }
-
-        // Contador de visitantes con Firebase
-        document.addEventListener('DOMContentLoaded', function() {
-            const visitorCountElement = document.getElementById('visitorCount');
-            const VISITOR_STORAGE_KEY = 'hasCountedVisit';
-            
-            // Obtener el contador actual de Firestore
-            function updateVisitorCount() {
-                db.collection('counters').doc('visitorCount').get()
-                    .then((doc) => {
-                        if (doc.exists) {
-                            const count = doc.data().count || 0;
-                            if (visitorCountElement) {
-                                visitorCountElement.textContent = count.toLocaleString();
-                            }
-                        } else {
-                            // Si el documento no existe, crearlo
-                            db.collection('counters').doc('visitorCount').set({ count: 1 });
-                            if (visitorCountElement) {
-                                visitorCountElement.textContent = '1';
-                            }
-                        }
-                    })
-                    .catch((error) => {
-                        console.error('Error al obtener contador de visitantes:', error);
-                        if (visitorCountElement) {
-                            visitorCountElement.textContent = '0';
-                        }
-                    });
-            }
-            
-            // Incrementar el contador si es la primera vez que visita
-            function incrementVisitorCount() {
-                const hasVisited = localStorage.getItem(VISITOR_STORAGE_KEY);
-                
-                if (!hasVisited) {
-                    // Marcar que ya contamos esta visita
-                    localStorage.setItem(VISITOR_STORAGE_KEY, 'true');
-                    
-                    // Incrementar en Firebase
-                    const counterRef = db.collection('counters').doc('visitorCount');
-                    
-                    db.runTransaction((transaction) => {
-                        return transaction.get(counterRef).then((doc) => {
-                            if (!doc.exists) {
-                                transaction.set(counterRef, { count: 1 });
-                                return 1;
-                            }
-                            const newCount = (doc.data().count || 0) + 1;
-                            transaction.update(counterRef, { count: newCount });
-                            return newCount;
-                        });
-                    })
-                    .then((newCount) => {
-                        if (visitorCountElement) {
-                            visitorCountElement.textContent = newCount.toLocaleString();
-                        }
-                    })
-                    .catch((error) => {
-                        console.error('Error al incrementar contador de visitantes:', error);
-                    });
-                } else {
-                    // Si ya contamos esta visita, solo mostrar el contador actual
-                    updateVisitorCount();
-                }
-            }
-            
-            // Inicializar
-            incrementVisitorCount();
-        });
-    </script>
+    <!-- Scripts modulares -->
+    <script src="js/firebase-logic.js" defer></script>
+    <script src="js/accordion.js" defer></script>
+    <script src="js/modals.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
