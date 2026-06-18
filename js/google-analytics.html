@@ -1,0 +1,82 @@
+<!-- Google Analytics 4 -->
+<!-- Reemplaza 'G-XXXXXXXXXX' con tu ID de Google Analytics 4 -->
+<!-- Para obtenerlo: https://analytics.google.com/ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    'page_path': window.location.pathname,
+    'anonymize_ip': true,
+    'allow_google_signals': true,
+    'allow_ad_personalization_signals': false
+  });
+
+  // Tracking de eventos personalizados
+  document.addEventListener('click', function(e) {
+    // Tracking de clicks en enlaces externos
+    if (e.target.hostname !== window.location.hostname && e.target.tagName === 'A') {
+      gtag('event', 'click_external_link', {
+        'url': e.target.href,
+        'text': e.target.textContent
+      });
+    }
+  });
+
+  // Tracking de descargas
+  document.querySelectorAll('a[download]').forEach(link => {
+    link.addEventListener('click', function() {
+      gtag('event', 'file_download', {
+        'file_name': this.getAttribute('download') || this.href,
+        'link_url': this.href
+      });
+    });
+  });
+
+  // Tracking de formularios (si existen)
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', function() {
+      gtag('event', 'form_submit', {
+        'form_id': this.id || 'form_sin_id'
+      });
+    });
+  });
+</script>
+
+<!-- Comentarios útiles para SEO/Analytics:
+
+1. CONFIGURACIÓN DE GOOGLE ANALYTICS 4:
+   - Reemplaza 'G-XXXXXXXXXX' con tu ID real
+   - Obtén tu ID en: https://analytics.google.com/
+   - Crea una nueva propiedad GA4
+   - Vincula con Search Console para mejores datos
+
+2. EVENTOS RASTREADOS AUTOMÁTICAMENTE:
+   - Clicks en enlaces externos
+   - Descargas de archivos (Plan de Gobierno)
+   - Envíos de formularios
+
+3. MÉTRICAS IMPORTANTES A MONITOREAR:
+   - Tráfico orgánico (Google Search)
+   - Usuarios únicos por día/mes
+   - Páginas más vistas
+   - Fuentes de tráfico (Google, Facebook, directa)
+   - Ubicación de visitantes (geolocalización)
+   - Dispositivos usados (mobile vs desktop)
+
+4. CONEXIÓN CON SEARCH CONSOLE:
+   - En GA4: Admin → Property Settings → Search Console
+   - Esto muestra qué keywords traen tráfico
+
+5. RECORDATORIOS DE PRIVACIDAD:
+   - anonymize_ip: true = protege privacidad de usuarios
+   - allow_ad_personalization_signals: false = respeta preferencias
+
+6. PARA TRACKEAR EVENTOS ADICIONALES EN EL FUTURO:
+   gtag('event', 'nombre_evento', {
+     'parametro1': 'valor1',
+     'parametro2': 'valor2'
+   });
+-->

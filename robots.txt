@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /.git
+Disallow: /.firebase
+Disallow: /.vscode
+
+Sitemap: https://niko-intendente.capiata.com.py/sitemap.xml
+
+# Permitir que Googlebot y otros motores de búsqueda rastreen
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
